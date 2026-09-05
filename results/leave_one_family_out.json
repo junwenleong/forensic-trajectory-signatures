@@ -1,0 +1,65 @@
+[
+  {
+    "defense": "memory_sandbox",
+    "n": 360,
+    "n_attacks": 40,
+    "n_non_attacks": 320,
+    "auc": 0.4375,
+    "recall": 1.0,
+    "precision": 0.16666666666666666
+  },
+  {
+    "defense": "minimizer",
+    "n": 360,
+    "n_attacks": 320,
+    "n_non_attacks": 40,
+    "auc": 1.0,
+    "recall": 1.0,
+    "precision": 1.0
+  },
+  {
+    "defense": "no_defense",
+    "n": 360,
+    "n_attacks": 319,
+    "n_non_attacks": 41,
+    "auc": 1.0,
+    "recall": 1.0,
+    "precision": 1.0
+  },
+  {
+    "defense": "prompt_hardening",
+    "n": 360,
+    "n_attacks": 280,
+    "n_non_attacks": 80,
+    "auc": 0.7142857142857143,
+    "recall": 1.0,
+    "precision": 0.875
+  },
+  {
+    "defense": "rag_llm_judge",
+    "n": 360,
+    "n_attacks": 320,
+    "n_non_attacks": 40,
+    "auc": 1.0,
+    "recall": 1.0,
+    "precision": 1.0
+  },
+  {
+    "defense": "rag_sanitizer",
+    "n": 360,
+    "n_attacks": 320,
+    "n_non_attacks": 40,
+    "auc": 1.0,
+    "recall": 1.0,
+    "precision": 1.0
+  },
+  {
+    "defense": "sanitizer",
+    "n": 360,
+    "n_attacks": 320,
+    "n_non_attacks": 40,
+    "auc": 1.0,
+    "recall": 1.0,
+    "precision": 1.0
+  }
+]
