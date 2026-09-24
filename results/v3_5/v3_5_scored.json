@@ -1,0 +1,35 @@
+{
+  "gpt-4.1": {
+    "n": 100,
+    "completed_sends": 76,
+    "recipient_flag": 76,
+    "combined_flag": 38,
+    "recipient_ci": [
+      0.9518847317689024,
+      0.9999999999999999
+    ],
+    "combined_ci": [
+      0.3903240360982663,
+      0.6096759639017337
+    ]
+  },
+  "gemini-2.5-pro": {
+    "n": 100,
+    "completed_sends": 53,
+    "recipient_flag": 53,
+    "combined_flag": 20,
+    "recipient_ci": [
+      0.9324156955469234,
+      1
+    ],
+    "combined_ci": [
+      0.25936076571733824,
+      0.5119334976390768
+    ]
+  },
+  "pooled": {
+    "completed_sends": 129,
+    "recipient_flag": 129,
+    "combined_flag": 58
+  }
+}

@@ -52,6 +52,16 @@ RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 EMBEDDINGS_CACHE = RESULTS_DIR / "embeddings.npz"
 
+
+def _cache_path_for(attacker_address: str) -> Path:
+    """Per-address cache file. Keying by address prevents the single-file cache
+    from being overwritten when the requested attacker address changes, so the
+    store for every address condition is preserved for re-runs. The legacy
+    single-file ``embeddings.npz`` is still honored on read for the first
+    address for backward compatibility with previously released artifacts."""
+    slug = hashlib.blake2b(attacker_address.encode("utf-8"), digest_size=8).hexdigest()
+    return RESULTS_DIR / f"embeddings_{slug}.npz"
+
 MODELS = ["gpt-4.1", "gpt-4o"]
 
 TOP_K = 4  # Primary analysis; sweep k=2,4,8 in secondary
@@ -139,23 +149,29 @@ def build_store(client, attacker_address: str):
     poisoned_record = ROUTING_RULE_TEMPLATE.format(addr=attacker_address)
     all_records = BENIGN_RECORDS + [poisoned_record]
 
-    # Check cache
-    if EMBEDDINGS_CACHE.exists():
-        data = np.load(EMBEDDINGS_CACHE, allow_pickle=True)
-        embeddings = data["embeddings"]
-        records = list(data["records"])
-        cached_addr = str(data.get("attacker_address", ""))
-        if cached_addr == attacker_address and len(records) == 31:
-            index = faiss.IndexFlatIP(embeddings.shape[1])
-            index.add(embeddings)
-            return index, records, embeddings
-        # Cache mismatch — rebuild
+    # Check per-address cache first, then the legacy single-file cache (read-only,
+    # backward-compat for the first address in previously released artifacts).
+    cache_path = _cache_path_for(attacker_address)
+    for candidate in (cache_path, EMBEDDINGS_CACHE):
+        if candidate.exists():
+            data = np.load(candidate, allow_pickle=True)
+            embeddings = data["embeddings"]
+            records = list(data["records"])
+            cached_addr = str(data.get("attacker_address", ""))
+            if cached_addr == attacker_address and len(records) == 31:
+                index = faiss.IndexFlatIP(embeddings.shape[1])
+                index.add(embeddings)
+                return index, records, embeddings
+        # Cache miss / mismatch — try next candidate, else rebuild
 
     print("  Building embeddings (31 records)...", flush=True)
     embeddings = get_embeddings(all_records, client)
 
-    # Cache for reproducibility
-    np.savez(EMBEDDINGS_CACHE,
+    # Cache for reproducibility, keyed by attacker address so no condition's
+    # store is overwritten by another. Note: embeddings are produced by an
+    # external API (text-embedding-3-small); the cache enables re-runs but the
+    # vectors are not guaranteed bitwise-identical across API snapshots.
+    np.savez(cache_path,
              embeddings=embeddings,
              records=np.array(all_records, dtype=object),
              attacker_address=np.array(attacker_address))

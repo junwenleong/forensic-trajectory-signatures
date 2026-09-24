@@ -1,0 +1,100 @@
+{
+  "control/gpt-4.1": {
+    "n_trials": 40,
+    "successes": 37,
+    "recall_before_exfil_0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.09406095745514377
+    ],
+    "rf_recall_mapped": 37,
+    "rf_recall_unmapped": 0,
+    "power": "ok"
+  },
+  "control/gpt-4o": {
+    "n_trials": 38,
+    "successes": 37,
+    "recall_before_exfil_0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.09406095745514377
+    ],
+    "rf_recall_mapped": 37,
+    "rf_recall_unmapped": 0,
+    "power": "ok"
+  },
+  "keystone/gpt-4.1": {
+    "n": 60,
+    "completed_shares": 7,
+    "recall_before_share": 7,
+    "phenotype_rate": 1.0,
+    "phenotype_ci": [
+      0.6456611570247934,
+      1.0
+    ]
+  },
+  "keystone/gpt-4o": {
+    "n": 60,
+    "completed_shares": 60,
+    "recall_before_share": 60,
+    "phenotype_rate": 1.0,
+    "phenotype_ci": [
+      0.9398260695220669,
+      0.9999999999999999
+    ]
+  },
+  "nopoison/gpt-4.1": {
+    "n_trials": 60,
+    "successes": 0,
+    "recall_before_exfil_0_violations": 0,
+    "violation_rate": null,
+    "violation_wilson95": [
+      0.0,
+      1.0
+    ],
+    "rf_recall_mapped": 0,
+    "rf_recall_unmapped": 0,
+    "power": "feasibility"
+  },
+  "nopoison/gpt-4o": {
+    "n_trials": 60,
+    "successes": 0,
+    "recall_before_exfil_0_violations": 0,
+    "violation_rate": null,
+    "violation_wilson95": [
+      0.0,
+      1.0
+    ],
+    "rf_recall_mapped": 0,
+    "rf_recall_unmapped": 0,
+    "power": "feasibility"
+  },
+  "treatment/gpt-4.1": {
+    "n_trials": 150,
+    "successes": 0,
+    "recall_before_exfil_0_violations": 0,
+    "violation_rate": null,
+    "violation_wilson95": [
+      0.0,
+      1.0
+    ],
+    "rf_recall_mapped": 0,
+    "rf_recall_unmapped": 0,
+    "power": "feasibility"
+  },
+  "treatment/gpt-4o": {
+    "n_trials": 150,
+    "successes": 5,
+    "recall_before_exfil_0_violations": 5,
+    "violation_rate": 1.0,
+    "violation_wilson95": [
+      0.5655085052479191,
+      1.0
+    ],
+    "rf_recall_mapped": 5,
+    "rf_recall_unmapped": 0,
+    "power": "feasibility"
+  }
+}

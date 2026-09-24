@@ -256,7 +256,9 @@ def load_data():
             continue
 
         model = r.get("condition", {}).get("model", {}).get("model_name", "unknown")
-        defense = r.get("condition", {}).get("defense", {}).get("type", "none")
+        # Use .name (not .type) so defense labels match the paper's tables and
+        # leave_one_family_out.py ("no_defense", not "none").
+        defense = r.get("condition", {}).get("defense", {}).get("name", "no_defense")
         feats = extract_features(r)
         label = int(r.get("attack_success", False))
 
@@ -282,8 +284,16 @@ def bca_ci(data, statistic, n_boot=10000, ci=0.95, seed=42):
     from scipy.stats import norm
     z0 = norm.ppf(np.mean(boot_stats <= theta_hat) + 1e-10)
 
-    # Jackknife acceleration
-    jack = np.array([statistic(np.delete(data, i)) for i in range(min(n, 200))])
+    # Jackknife acceleration over ALL leave-one-out samples.
+    # CORRECTION: this was previously capped at range(min(n, 200)). Because
+    # records load in file order, the first 200 rows of the P1 corpus are 100%
+    # positive-label (against 76.2% overall), so the acceleration estimate was
+    # computed on an unrepresentative block and even changed sign (+0.0118 capped
+    # versus -0.0235 on the full jackknife). main() has always computed its
+    # reported interval inline; this generic helper retained the capped form and
+    # was therefore a live trap for anyone who called it. Quantified in
+    # bca_jackknife_sensitivity.py.
+    jack = np.array([statistic(np.delete(data, i)) for i in range(n)])
     jack_mean = np.mean(jack)
     num = np.sum((jack_mean - jack) ** 3)
     den = 6 * (np.sum((jack_mean - jack) ** 2) ** 1.5)
@@ -367,17 +377,10 @@ def main():
         f1_score = 2*tp/(2*tp+fp+fn) if (2*tp+fp+fn)>0 else 0
         acc = (tp+tn)/len(y)
 
-        # BCa bootstrap CI on AUC (n_boot=5000, seed=42)
-        auc_arr = np.array([
-            roc_auc_score(y[rng_idx], proba[rng_idx])
-            for rng_idx in [
-                np.random.RandomState(42 + b).choice(len(y), size=len(y), replace=True)
-                for b in range(5000)
-            ]
-            if len(np.unique(y[np.random.RandomState(42 + 0).choice(len(y), size=len(y), replace=True)])) > 1
-        ]) if False else None  # BCa via bca_ci() below
-
-        # BCa CI — use the bca_ci() function defined above
+        # BCa bootstrap CI on AUC (n_boot=10000, seed=42). Computed inline below
+        # rather than by calling bca_ci(): the statistic here is a function of
+        # index arrays into (y, proba), not of a flat data vector, so it does not
+        # fit bca_ci()'s signature. Both now use the full leave-one-out jackknife.
         def _auc_stat(indices):
             idx = indices.astype(int)
             if len(np.unique(y[idx])) < 2:
@@ -391,12 +394,18 @@ def main():
             if len(np.unique(y[idx])) >= 2 else auc
             for idx in boot_indices
         ])
-        # Jackknife acceleration (capped at 200 samples)
-        n_jack = min(len(y), 200)
+        # Jackknife acceleration over ALL leave-one-out samples.
+        # NOTE: an earlier version capped this at the first 200 rows
+        # (n_jack = min(len(y), 200); for i in range(n_jack)). Because records
+        # load in file order, that block is 100% positive-label (vs 76.2%
+        # overall), so the acceleration estimate was unrepresentative and its
+        # sign flipped (+0.0118 vs -0.0235 on the full jackknife). The reported
+        # interval is unchanged at 3 decimals either way; see
+        # bca_jackknife_sensitivity.py.
         jack_aucs = np.array([
             roc_auc_score(np.delete(y, i), np.delete(proba, i))
             if len(np.unique(np.delete(y, i))) >= 2 else auc
-            for i in range(n_jack)
+            for i in range(len(y))
         ])
         jack_mean = np.mean(jack_aucs)
         num = np.sum((jack_mean - jack_aucs) ** 3)
@@ -424,7 +433,7 @@ def main():
     # the leave-one-model-out hold-out below is the primary cross-model evidence.
     try:
         from sklearn.model_selection import StratifiedGroupKFold
-        defenses_arr = np.array([r.get("defense", "none") for r in records]) \
+        defenses_arr = np.array([r.get("defense", "no_defense") for r in records]) \
             if "defense" in records[0] else None
         # Cell = model|defense; fall back to model-only if defense unavailable.
         if defenses_arr is not None:

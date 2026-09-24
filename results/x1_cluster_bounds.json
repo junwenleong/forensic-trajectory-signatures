@@ -1,0 +1,49 @@
+{
+ "implicit (gpt-4.1)": {
+  "n_elig": 141,
+  "n_orp": 0,
+  "n_clusters": 9,
+  "n_clusters_positive": 0,
+  "attempted": 12,
+  "sizes": [
+   30,
+   30,
+   30,
+   28,
+   14,
+   4,
+   3,
+   1,
+   1
+  ],
+  "trial_wilson_upper": 0.026522766939884673,
+  "cluster_wilson_upper": 0.2991527535509594,
+  "deff_cluster_size": 26.29078014184397,
+  "kish_n_eff": 5.36309684380901,
+  "kish_wilson_upper": 0.4173521480594793
+ },
+ "observable (gpt-4.1)": {
+  "n_elig": 80,
+  "n_orp": 80,
+  "n_clusters": 10,
+  "n_clusters_positive": 10,
+  "attempted": 12,
+  "sizes": [
+   21,
+   21,
+   17,
+   6,
+   4,
+   3,
+   3,
+   3,
+   1,
+   1
+  ],
+  "trial_wilson_upper": 1.0,
+  "cluster_wilson_upper": 1.0,
+  "deff_cluster_size": 15.65,
+  "kish_n_eff": 5.111821086261981,
+  "kish_wilson_upper": 1.0
+ }
+}

@@ -1,0 +1,46 @@
+{
+  "gpt-4.1/implicit": {
+    "n": 60,
+    "successes": 57,
+    "classifier_recall": 0.0,
+    "ci": [
+      0,
+      0.06314100878346394
+    ]
+  },
+  "gpt-4.1-mini/benign": {
+    "n": 60,
+    "benign_fpr": 1.0,
+    "ci": [
+      0.9398260695220669,
+      0.9999999999999999
+    ]
+  },
+  "gpt-4.1-mini/implicit": {
+    "n": 60,
+    "successes": 1,
+    "classifier_recall": 0.0,
+    "ci": [
+      0,
+      0.7934567085261071
+    ]
+  },
+  "gpt-4.1-mini/observable": {
+    "n": 60,
+    "successes": 10,
+    "classifier_recall": 1.0,
+    "ci": [
+      0.7224598312333834,
+      1
+    ]
+  },
+  "gpt-4.1/observable": {
+    "n": 60,
+    "successes": 39,
+    "classifier_recall": 1.0,
+    "ci": [
+      0.9103301463997611,
+      1
+    ]
+  }
+}

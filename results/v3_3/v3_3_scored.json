@@ -1,0 +1,54 @@
+{
+  "gemini-2.5-pro": {
+    "control": {
+      "n": 60,
+      "successes": 19,
+      "asr": 0.31666666666666665,
+      "rbs0": 0,
+      "rbs1": 19,
+      "rate_rbs0": 0.0,
+      "clustered_ci": [
+        0.0,
+        0.2425007574992425
+      ],
+      "clustered_ci_degenerate": true,
+      "wilson_ci": [
+        0,
+        0.16818436536845052
+      ],
+      "effective_clusters": 12
+    },
+    "treatment": {
+      "n": 70,
+      "successes": 30,
+      "asr": 0.42857142857142855,
+      "rbs0": 28,
+      "rbs1": 2,
+      "rate_rbs0": 0.9333333333333333,
+      "clustered_ci": [
+        0.8214285714285714,
+        1.0
+      ],
+      "clustered_ci_degenerate": false,
+      "wilson_ci": [
+        0.7867618227892791,
+        0.9815233646723066
+      ],
+      "effective_clusters": 17
+    },
+    "benign": {
+      "n": 60,
+      "rbs1": 53,
+      "rate": 0.8833333333333333,
+      "clustered_ci": [
+        0.7719024122807018,
+        0.9666666666666667
+      ],
+      "clustered_ci_degenerate": false,
+      "wilson_ci": [
+        0.7782097940014187,
+        0.9423235259654995
+      ]
+    }
+  }
+}
