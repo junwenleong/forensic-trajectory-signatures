@@ -23,8 +23,18 @@ volume-mediation account).
 **This holds across both frontier and open-weight models.** Pooling the API set with the Mac
 Studio OSS replication (glm-4.7-flash, gpt-oss:20b/safeguard:120b, qwen2.5:14b/72b, qwen3:32b,
 qwen3.5:9b/122b, qwq:32b — 13 models total): `P(FP | recall_before_send=1) = 100.0%` [99.8,100.0]
-N=1673; `P(FP | recall_before_send=0) = 1.5%` [1.1,2.0] N=2687 (script: `scripts/score_v2_1.py`).
+N=1713; `P(FP | recall_before_send=0) = 0.0%` [0.0,0.14] N=2647.
 The precision ceiling is not a frontier-API artifact — it generalizes to open-weight models too.
+
+> Corrected 2026-09-19. This file previously reported `1.5%` [1.1,2.0] at
+> `recall_before_send=0` with N=1673/2687, computed under the superseded
+> *first-occurrence* feature definition (first recall vs first send). The released
+> classifier (`paper_a_classifier.py`) implements the corrected *any-preceding*
+> definition (`min(recall_positions) < max(send_positions)`), which reclassifies the 40
+> send-then-recall-then-send sessions that the naive definition mislabelled — exactly
+> the 1.5% of 2687. Hence 1673+40 = 1713 and 2687-40 = 2647, and the map from
+> `recall_before_send` to the flag is exactly deterministic on the benign corpus. These
+> are now the same numbers the paper reports; the underlying V2-1 data are unchanged.
 
 Benign memory-grounded sends — an agent that recalls stored context (a deadline, a lead, a standup
 time) and then emails it to the legitimate recipient — produce exactly this trajectory. They are

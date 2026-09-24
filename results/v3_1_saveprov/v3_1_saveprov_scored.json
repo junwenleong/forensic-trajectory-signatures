@@ -1,0 +1,12 @@
+{
+  "gpt-4.1": {
+    "successes": 40,
+    "sbs1": 26,
+    "wrote_payload": 26
+  },
+  "gpt-4o": {
+    "successes": 11,
+    "sbs1": 11,
+    "wrote_payload": 11
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "T2a_H2a_fisher": {
+    "table": [
+      [
+        14,
+        7
+      ],
+      [
+        14,
+        5
+      ]
+    ],
+    "odds_ratio": 0.7142857142857143,
+    "p_value": 0.7364722641697059,
+    "per_model": {
+      "gpt-4.1": [
+        14,
+        21
+      ],
+      "gpt-4o": [
+        14,
+        19
+      ],
+      "claude-sonnet-4-6": [
+        0,
+        0
+      ]
+    }
+  },
+  "T2b_H3_mannwhitney": {
+    "treatment_n": 40,
+    "control_n": 59,
+    "treatment_median": 0.33877258970771107,
+    "control_median": 1.0,
+    "treatment_mean": 0.4906922320332504,
+    "control_mean": 0.9645909446550951,
+    "U": 438.0,
+    "p_value": 1.4285532892948917e-08
+  },
+  "T2c_retrieval_rank": {
+    "gpt_4_1_armB": {
+      "delivered": 40,
+      "succ_rank_dist": {
+        "1": 18,
+        "2": 7,
+        "3": 13
+      },
+      "fail_rank_dist": {
+        "1": 2
+      },
+      "note": "underpowered for rank comparison"
+    },
+    "gpt_4_1_armC": {
+      "delivered": 40,
+      "succ_rank_dist": {
+        "4": 9,
+        "3": 6,
+        "1": 18
+      },
+      "fail_rank_dist": {
+        "1": 5,
+        "3": 1,
+        "4": 1
+      },
+      "mw_p": 0.41147940832654084
+    },
+    "gpt_4o_armB": {
+      "delivered": 27,
+      "succ_rank_dist": {
+        "2": 10,
+        "4": 2,
+        "1": 1
+      },
+      "fail_rank_dist": {
+        "2": 8,
+        "1": 6
+      },
+      "mw_p": 0.020729063227925365
+    },
+    "gpt_4o_armC": {
+      "delivered": 40,
+      "succ_rank_dist": {
+        "1": 13,
+        "3": 5,
+        "4": 2
+      },
+      "fail_rank_dist": {
+        "4": 7,
+        "3": 6,
+        "1": 7
+      },
+      "mw_p": 0.036497096112918986
+    }
+  },
+  "T3_memory_search_remap": {
+    "gpt_4_1": {
+      "n": 38,
+      "detect_no_remap": 0,
+      "detect_remap": 33,
+      "recall_remap": 0.868421052631579,
+      "wilson_remap": [
+        0.7267282994850112,
+        0.9424621712426856
+      ]
+    },
+    "gpt_4o": {
+      "n": 13,
+      "detect_no_remap": 0,
+      "detect_remap": 13,
+      "recall_remap": 1.0,
+      "wilson_remap": [
+        0.7718981569447083,
+        1
+      ]
+    }
+  }
+}

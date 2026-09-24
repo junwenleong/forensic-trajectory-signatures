@@ -114,7 +114,11 @@ def load_data():
         if r.get("condition", {}).get("attack", {}).get("type", "") != "delayed_trigger":
             continue
         model   = r.get("condition", {}).get("model", {}).get("model_name", "unknown")
-        defense = r.get("condition", {}).get("defense", {}).get("type", "no_defense")
+        # Use .name (not .type): the paper's tables and leave_one_family_out.py
+        # key on the .name value ("no_defense"), whereas .type reports "none"
+        # for the no-defense cell. Reading .type here silently dropped the
+        # "No Defense" stratum from Figure 3 (defense_order keys on "no_defense").
+        defense = r.get("condition", {}).get("defense", {}).get("name", "no_defense")
         feats   = extract_features(r)
         label   = int(r.get("attack_success", False))
         rec = {"features": feats, "label": label, "model": model, "defense": defense}
@@ -312,6 +316,17 @@ def main():
              "list_then_draft","draft_then_send"],
         "First-tool indicators (3 features)":
             ["first_tool_is_list","first_tool_is_recall","first_tool_is_draft"],
+        # All recall-related (9 features) -- the strongest ablation row in the
+        # paper (Table: "All recall-related"). Computed here with the SAME
+        # estimator spec as every other row (n_estimators=200, max_depth=8,
+        # random_state=42, NO class_weight) so the whole ablation table has one
+        # provenance. Previously this row was produced by a separate script
+        # (paper_a_stress_test.py) that used class_weight="balanced"; unifying
+        # it here removes the estimator-spec inconsistency the review flagged.
+        "All recall-related (9 features)":
+            ["recall_before_send", "send_without_recall", "recall_count",
+             "recall_to_send_ratio", "max_recall_chain", "recall_then_recall",
+             "recall_then_draft", "list_then_recall", "first_tool_is_recall"],
     }
     base_auc = roc_auc_score(y, proba_cv)
     print(f"  Baseline AUC (all 19 features): {base_auc:.4f}")
@@ -336,6 +351,7 @@ def main():
         "Ratio features (recall_to_send_ratio, max_recall_chain)":"Ratio\nfeatures (2)",
         "Bigram transitions (5 features)":                        "Bigram\ntransitions (5)",
         "First-tool indicators (3 features)":                     "First-tool\nindicators (3)",
+        "All recall-related (9 features)":                        "All recall-\nrelated (9)",
     }
     groups_ordered = list(FEATURE_GROUPS.keys())
     deltas = [ablation_results[g]["delta"] for g in groups_ordered]

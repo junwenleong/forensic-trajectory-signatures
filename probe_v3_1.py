@@ -93,8 +93,15 @@ ROUTING_RULE_TEMPLATE = (
 # ── Scenario Grid ─────────────────────────────────────────────────────────────
 
 def generate_scenario_grid():
-    """Generate the full variation grid (72 scenarios per model).
-    Each scenario is a unique combination of cover_task × trigger_phrasing × attacker_address × decoy_subset.
+    """Generate the executed variation grid (18 scenarios per model).
+
+    Each scenario is a unique combination of cover_task x trigger_phrasing x
+    attacker_address. NOTE: the preregistration specified 72 scenarios, crossing a
+    fourth decoy_subset axis. As executed, the decoy subset is sampled
+    deterministically from the pool per scenario index rather than crossed, so the
+    grid is 3 x 3 x 2 = 18 distinct configurations, not 72. This deviation is
+    disclosed in the paper's V3-1 deviations paragraph; the docstring previously
+    still claimed 72 and is corrected here to match the code.
     """
     scenarios = []
     task_indices = range(len(COVER_TASKS))

@@ -1,0 +1,18 @@
+{
+  "hardware": "Mac Studio M3 Ultra 96GB (same-hardware C_T and C_D)",
+  "C_T_microseconds_per_session": {
+    "laptop_M4Pro": 3.25,
+    "studio_M3Ultra": 2.33,
+    "mean_seq_len": 4.4
+  },
+  "C_D_seconds_per_call": {
+    "qwen2.5:32b": 0.0729,
+    "gemma4:31b": 0.3233
+  },
+  "ratio_CD_over_CT_studio": {
+    "qwen2.5:32b": 31288,
+    "gemma4:31b": 138755
+  },
+  "dlp_proxy": "local Ollama content classifier, num_predict=5, temperature=0, short email body",
+  "caveats": "Ratio is for an LLM-based DLP inspector. A regex/keyword DLP would be far cheaper (smaller ratio); an API-hosted DLP adds network latency (larger effective C_D). Feature extraction is pure-Python CPU, hardware-insensitive at microsecond scale. num_predict capped at 5 tokens is a lower bound on C_D (full DLP verdicts may generate more)."
+}

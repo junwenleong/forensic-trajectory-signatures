@@ -1,0 +1,115 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Dang(2026)]{dang2026enforcing}
+Hung Dang.
+\newblock Enforcing benign trajectories: A behavioral firewall for
+  structured-workflow {AI} agents, 2026.
+\newblock arXiv:2604.26274.
+
+\bibitem[Dash et~al.(2026)]{zhang2026mpbench}
+Pritam Dash et~al.
+\newblock From untrusted input to trusted memory: A systematic study of memory
+  poisoning attacks in {LLM} agents, 2026.
+\newblock arXiv:2606.04329.
+
+\bibitem[Dong et~al.(2025)Dong, Xu, He, Li, Tang, Liu, Liu, and
+  Xiang]{shao2025minja}
+Shen Dong, Shaochen Xu, Pengfei He, Yige Li, Jiliang Tang, Tianming Liu, Hui
+  Liu, and Zhen Xiang.
+\newblock {MINJA}: Memory injection attacks on {LLM} agents via query-only
+  interaction.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
+\newblock arXiv:2503.03704.
+
+\bibitem[Forrest et~al.(1996)Forrest, Hofmeyr, Somayaji, and
+  Longstaff]{forrest1996sense}
+Stephanie Forrest, Steven~A Hofmeyr, Anil Somayaji, and Thomas~A Longstaff.
+\newblock A sense of self for {Unix} processes.
+\newblock In \emph{Proceedings of the IEEE Symposium on Security and Privacy},
+  1996.
+
+\bibitem[Garcia-soto et~al.(2022)Garcia-soto, Chen, and
+  Koushanfar]{hayase2022perd}
+Diego Garcia-soto, Huili Chen, and Farinaz Koushanfar.
+\newblock {PerD}: Perturbation sensitivity-based neural trojan detection
+  framework on {NLP} applications, 2022.
+\newblock arXiv:2208.04943.
+
+\bibitem[Gowda(2026)]{gowda2026memsad}
+Ishrith Gowda.
+\newblock {MEMSAD}: Gradient-coupled anomaly detection for memory poisoning in
+  retrieval-augmented agents, 2026.
+\newblock arXiv:2605.03482.
+
+\bibitem[Leong(2026{\natexlab{a}})]{leong2026defense}
+Jun~Wen Leong.
+\newblock Injection-execution dissociation: A mechanistic evaluation of
+  persistent memory attacks and defenses in stateful {LLM} agents,
+  2026{\natexlab{a}}.
+\newblock arXiv:2605.08442.
+
+\bibitem[Leong(2026{\natexlab{b}})]{leong2026recognition}
+Jun~Wen Leong.
+\newblock Recognition without enforcement: Configuration-dependent failures in
+  {LLM} agent instruction arbitration and external control, 2026{\natexlab{b}}.
+\newblock arXiv:2608.28502.
+
+\bibitem[Li et~al.(2026)]{ma2026vigil}
+Ying Li et~al.
+\newblock {VIGIL}: Runtime enforcement of behavioral specifications in {AI}
+  agent skills, 2026.
+\newblock arXiv:2606.26524.
+
+\bibitem[Liu et~al.(2025)]{liu2025traceaegis}
+Jiahao Liu et~al.
+\newblock {TraceAegis}: Securing {LLM}-based agents via hierarchical and
+  behavioral anomaly detection, 2025.
+\newblock arXiv:2510.11203.
+
+\bibitem[Ouyang \& Hou(2026)Ouyang and Hou]{ouyang2026memlineage}
+Ciyan Ouyang and Rui Hou.
+\newblock {MemLineage}: Lineage-guided enforcement for {LLM} agent memory,
+  2026.
+\newblock arXiv:2605.14421.
+
+\bibitem[Pulipaka et~al.(2026)]{pulipaka2026hidden}
+Sidharth Pulipaka et~al.
+\newblock Hidden in memory: Sleeper memory poisoning in {LLM} agents, 2026.
+\newblock arXiv:2605.15338.
+
+\bibitem[Wang et~al.(2025)]{wang2025traces}
+Zijun Wang et~al.
+\newblock Proactive safety auditing for multi-turn {LLM} agents via
+  trajectory-state modeling, 2025.
+\newblock arXiv:2605.27690.
+
+\bibitem[Warrender et~al.(1999)Warrender, Forrest, and
+  Pearlmutter]{warrender1999detecting}
+Christina Warrender, Stephanie Forrest, and Barak Pearlmutter.
+\newblock Detecting intrusions using system calls: Alternative data models.
+\newblock In \emph{Proceedings of the IEEE Symposium on Security and Privacy},
+  1999.
+
+\bibitem[Xie et~al.(2026)]{xie2026crosssession}
+Yuanbo Xie et~al.
+\newblock What if prompt injection never left? exploring cross-session stored
+  prompt injection in agentic systems, 2026.
+\newblock arXiv:2606.04425.
+
+\bibitem[Yang et~al.(2026)Yang, He, Ji, Hooi, and Dong]{yang2026zombie}
+Xianglin Yang, Yufei He, Shuo Ji, Bryan Hooi, and Jin~Song Dong.
+\newblock Zombie agents: Persistent control of self-evolving {LLM} agents via
+  self-reinforcing injections, 2026.
+\newblock arXiv:2602.15654.
+
+\bibitem[Zhang et~al.(2026)]{chen2026memmorph}
+Xuanye Zhang et~al.
+\newblock {MemMorph}: Tool hijacking via memory poisoning, 2026.
+\newblock arXiv:2605.26154.
+
+\end{thebibliography}

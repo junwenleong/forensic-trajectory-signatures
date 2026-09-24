@@ -58,7 +58,7 @@ def load_data():
         features.append([f[k] for k in FEATURE_NAMES])
         labels.append(int(r.get("attack_success", False)))
         models.append(r.get("condition", {}).get("model", {}).get("model_name", "unknown"))
-        defenses.append(r.get("condition", {}).get("defense", {}).get("type", "none"))
+        defenses.append(r.get("condition", {}).get("defense", {}).get("name", "no_defense"))
     return np.array(features), np.array(labels), np.array(models), np.array(defenses)
 
 

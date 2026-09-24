@@ -1,0 +1,94 @@
+{
+  "k2/gpt-4.1/B": {
+    "n": 40,
+    "delivered": 27,
+    "succ_delivered": 26,
+    "sbs0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.12873304380462175
+    ],
+    "power": "underpowered"
+  },
+  "k2/gpt-4.1/C": {
+    "n": 40,
+    "delivered": 21,
+    "succ_delivered": 19,
+    "viability_rate": 0.9047619047619048,
+    "viability_wilson95": [
+      0.7108541613925933,
+      0.9734817912030528
+    ],
+    "power": "underpowered"
+  },
+  "k2/gpt-4o/B": {
+    "n": 40,
+    "delivered": 29,
+    "succ_delivered": 13,
+    "sbs0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.22810184305529166
+    ],
+    "power": "descriptive-only"
+  },
+  "k2/gpt-4o/C": {
+    "n": 40,
+    "delivered": 23,
+    "succ_delivered": 20,
+    "viability_rate": 0.8695652173913043,
+    "viability_wilson95": [
+      0.678721020269818,
+      0.954624234856553
+    ],
+    "power": "underpowered"
+  },
+  "k8/gpt-4.1/B": {
+    "n": 40,
+    "delivered": 40,
+    "succ_delivered": 33,
+    "sbs0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.10427343003561192
+    ],
+    "power": "robustness"
+  },
+  "k8/gpt-4.1/C": {
+    "n": 40,
+    "delivered": 40,
+    "succ_delivered": 32,
+    "viability_rate": 0.8,
+    "viability_wilson95": [
+      0.6524239261814333,
+      0.8950013502683314
+    ],
+    "power": "robustness"
+  },
+  "k8/gpt-4o/B": {
+    "n": 40,
+    "delivered": 25,
+    "succ_delivered": 7,
+    "sbs0_violations": 0,
+    "violation_rate": 0.0,
+    "violation_wilson95": [
+      0.0,
+      0.35433884297520657
+    ],
+    "power": "descriptive-only"
+  },
+  "k8/gpt-4o/C": {
+    "n": 40,
+    "delivered": 40,
+    "succ_delivered": 23,
+    "viability_rate": 0.575,
+    "viability_wilson95": [
+      0.42194800436059987,
+      0.7149083147518411
+    ],
+    "power": "underpowered"
+  }
+}

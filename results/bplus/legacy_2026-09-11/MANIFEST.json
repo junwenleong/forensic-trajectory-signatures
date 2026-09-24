@@ -1,0 +1,37 @@
+{
+  "archived_on": "2026-09-19",
+  "reason": "Superseded by the v1.3 instrumentation amendment. These are the records underlying every currently published B+ number (arXiv:2606.30566). The email arm's benign store was never wired (deviation D1) and neither arm recorded memory-call arguments or return values (deviation D2), so E2 is not computable from them. Retained as provenance; NOT to be mixed with post-amendment data.",
+  "governing_prereg": "BPLUS_PREREG.md v1.0/v1.1/v1.2 (registered 2026-09-10)",
+  "files": {
+    "bplus_email_gpt_4_1.jsonl": {
+      "sha256": "8a7a82cd01080cf2b7d7f29a727be8475d1e8d4d36cf4b5dc05d8cc806110a02",
+      "bytes": 748023,
+      "records": 720
+    },
+    "bplus_email_gpt_4o.jsonl": {
+      "sha256": "63ef00e2bdd8db6b72b213a9fcfa9abee8bdbbed2c037117aed073495fd4c082",
+      "bytes": 850988,
+      "records": 720
+    },
+    "bplus_share_gpt_4_1.jsonl": {
+      "sha256": "8ee18fb6576c19ca2335a61e760588421a2a52a306c693c4f6061f77268f5e86",
+      "bytes": 232047,
+      "records": 720
+    },
+    "bplus_share_gpt_4o.jsonl": {
+      "sha256": "d40fabd5a6f85919455ba5117b9ceff95a33d8b39b20c31ec8ad19720f65d176",
+      "bytes": 260156,
+      "records": 720
+    },
+    "bplus_scored_LEGACY.json": {
+      "sha256": "a4041ced95400f70c9a8a1bbf9f3da5c573124ef649ca81e1a2022a047c39462",
+      "bytes": 4540,
+      "note": "Scoring of the archived records. These are the E1/E3 values cited in arXiv:2606.30566 (E1 720/720 all cells; E3 459/720, 441/720, 1/720, 220/720). E3 re-verified 2026-09-19 against the serialized frozen RF: identical."
+    },
+    "bplus_stage2_selection_D3_from_confirmatory.json": {
+      "sha256": "3b57f84ca53285f781ce16b7556cf535faec99ad4206c02147bfcd139e1a18cb",
+      "bytes": 3688,
+      "note": "The >=20% memory-relevance filter as originally computed. Deviation D3: computed from the confirmatory files, not an independent pilot. All 36 email scenarios passed at rate 1.0 because the unwired store (D1) made every session emit a memory call, so the filter was a no-op."
+    }
+  }
+}

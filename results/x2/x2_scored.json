@@ -1,0 +1,32 @@
+{
+  "benign/qwen2.5:32b": {
+    "n": 60,
+    "recall_before_send_1": 60,
+    "rate": 1.0,
+    "ci": [
+      0.9398260695220669,
+      0.9999999999999999
+    ]
+  },
+  "control/qwen2.5:32b": {
+    "n_trials": 150,
+    "successes": 24,
+    "rbs0_violations": 0,
+    "violation_wilson95": [
+      0.0,
+      0.13798057582897535
+    ],
+    "power": "underpowered"
+  },
+  "treatment/qwen2.5:32b": {
+    "n_trials": 150,
+    "successes": 31,
+    "rbs0_count": 27,
+    "rbs0_rate": 0.8709677419354839,
+    "rbs0_wilson95": [
+      0.7114724304561464,
+      0.9486579883535524
+    ],
+    "power": "underpowered"
+  }
+}
