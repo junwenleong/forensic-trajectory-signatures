@@ -13,7 +13,7 @@ FEATS = ["recall_count","list_count","save_count","draft_count","send_count","ra
     "first_tool_is_list","first_tool_is_recall","first_tool_is_draft"]
 
 # --- TRAIN: LangGraph/SQLite factorial (the FTS training harness) ---
-P1 = Path.home()/"projects/agentic/results/defense_factorial/results.jsonl"
+P1 = Path(os.environ.get("P1_JSONL_PATH", str(Path.home()/"projects/agentic/results/defense_factorial/results.jsonl")))
 Xtr, ytr = [], []
 for l in P1.read_text().splitlines():
     if not l.strip(): continue

@@ -11,6 +11,22 @@
 > NOT confirmed; the effect is binary-saturated at rbs=1 regardless of k
 > (see paper Section 8). This closes the prereg.
 
+> **SUPERSEDED (annotated 2026-09-24; the block above is retained verbatim as the
+> historical record and must not be cited as current).** The conditional FPR figures
+> above were computed under the superseded *first-occurrence* `recall_before_send`
+> definition, which mislabelled 40 qwq:32b send-then-recall-then-send sessions as
+> rbs=0. Under the released *any-preceding* definition the denominators shift and the
+> separation becomes exact:
+> **P(FP | rbs=1) = 100.0% on N=1,713; P(FP | rbs=0) = 0.0% on N=2,647.**
+> The 1.5% figure no longer exists as a quantity; do not quote it. The current values,
+> the feature-definition correction and the reason the choice changes nothing in the
+> primary factorial are in paper.tex (deployment-boundary section and the
+> "Feature definition limitation" paragraph). H2's disposition is unchanged, but note
+> that the H2 comparison as *registered* (benign FPR versus detector recall on true
+> attacks) was replaced post-data by P(FP | rbs=1) because the registered form compared
+> a benign-API population against an attack-OSS population; that substitution is a
+> deviation and is catalogued in the paper's deviations table.
+
 **STATUS (2026-07-18): DATA COLLECTION COMPLETE, ANALYSIS COMPLETE.**
 
 ## Motivation

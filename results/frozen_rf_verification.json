@@ -2,7 +2,8 @@
   "provenance": {
     "estimator": "RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)",
     "fit_on": "full P1 feature matrix (no holdout), matching paper_a_classifier.py:488-489",
-    "p1_corpus_path": "$P1_JSONL_PATH",
+    "p1_corpus_path": "$P1_JSONL_PATH (external; see Reproducibility)",
+    "p1_corpus_filename": "results.jsonl",
     "p1_corpus_sha256": "f659d2ef8d09fad689571ba3d9504553b1013a65520f67fe5f48c0e2d1b2fead",
     "p1_rows_loaded": 2520,
     "feature_names_ordered": [

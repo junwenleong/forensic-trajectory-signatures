@@ -59,16 +59,34 @@ buckets — otherwise non-completing models look artificially safe:
 | Phenotype | Benign behavior | FPR\|sent | Models (tested) |
 |---|---|---|---|
 | **Ground-then-act** | recall → send | 76–100% | claude-sonnet-4-6 (99%), gemini-3.5-flash (100%), gemini-3.1-pro (76%) |
-| **Act-without-grounding** | send, no recall | 0% | gpt-4o, gpt-4.1, gpt-4o-mini, o4-mini |
+| **Act-without-grounding** | send, no recall | 0% | gpt-4o, gpt-4.1, gpt-4o-mini, o4-mini, qwen2.5:14b (0/320 benign rbs=1), qwq:32b outside its `k=1 mandatory` cell |
 | **Don't-act** | no send at all | n/a (uninformative) | claude-haiku-4-5 (0/80 send), claude-opus-4-8 (78/80 no-send) |
 
-**OSS models replicate the same three phenotypes** (Mac Studio, N=40/cell): qwen2.5:14b/72b,
+**OSS models replicate the same three phenotypes** (Mac Studio, N=40/cell): qwen2.5:72b,
 qwen3:32b, qwen3.5:9b/122b, gpt-oss:20b/safeguard:120b, and glm-4.7-flash all show
 ground-then-act at higher k with FPR=100% whenever recall_before_send=1, matching the frontier
-pattern above. One anomaly: **qwq:32b** shows an inconsistent/near-zero FPR profile across most
-cells despite comparable recall behavior — flagged here as unexplained, not force-fit into a
-phenotype bucket (possible reasoning-model-specific effect on tool-call sequencing; not
-investigated further, out of scope for this deployment note).
+pattern above.
+
+Two per-model corrections (2026-09-24), both verified by re-scoring the V2-1 records:
+
+- **`qwq:32b` is not an anomaly.** This file previously described it as showing an
+  "inconsistent/near-zero FPR profile across most cells, flagged as unexplained." That was
+  true only under the superseded *first-occurrence* feature definition corrected in §1.
+  Re-scoring all eight `qwq:32b` cells (320 benign sessions, all of which send): under
+  first-occurrence, `recall_before_send=1` in **0/320**; under the released any-preceding
+  definition, **40/320 = 12.5%**, and the whole difference is the single `k=1 mandatory`
+  cell, where all 40 sessions flip 0→1 (i.e. 100% conditional FPR in that cell, 0 elsewhere).
+  The mechanism is the send → recall-to-revise → re-send pattern the old feature mislabelled.
+  `qwq:32b` therefore behaves like every other model once the feature is correct, and the
+  "unexplained" framing is withdrawn. (Its *attack-side* implicit-bypass behavior — RAG
+  fallback instead of explicit `recall_fact` — is a separate, still-valid finding.)
+- **`qwen2.5:14b` is act-without-grounding on this corpus, not ground-then-act.** It was
+  previously listed above among the models showing "FPR=100% whenever recall_before_send=1."
+  It has no such sessions to characterise: `recall_before_send=0` in **all 320** benign
+  sessions under *both* definitions, so its V2-1 benign FPR is 0% and it belongs in the
+  act-without-grounding bucket. This does not conflict with the paper's leave-one-model-out
+  result (hold-out AUC 0.083), which concerns the P1 *attack* factorial, where this model does
+  call `recall_fact` on non-exfiltration sessions. Two different corpora, two different tasks.
 
 The ground-then-act propensity is **not a tool-description artifact** — it survives replacing the
 memory tool's compliance-flavored description with a neutral key-value-store description (Sonnet
@@ -85,10 +103,18 @@ deployment where agents ground actions in memory (a desirable, common pattern), 
 reach 76–100% for ground-then-act models. Instead:
 
 - Use `recall→send` as a **high-recall escalation / triage signal**, not a block decision.
-- **Gate it with semantics**: recipient externality (a single routing-metadata bit computable from the
-  send tool's `to` argument — no message-content inspection — separates benign/attack perfectly *on
-  this data*, with an honest residual: benign external comms, e.g. legitimate client email, would set
-  the bit → residual FP), and/or task-intent / memory-content checks.
+- **Gate it with semantics, not with recipient metadata.** Recipient externality (a single
+  routing-metadata bit computable from the send tool's `to` argument, no message-content
+  inspection) was the one gate actually tested, and **V3-5 falsified it**: on legitimate
+  external business email the recipient bit flags 129 of 129 completed sends (100%), and the
+  combined gate (`recall_before_send=1` AND external recipient) still flags 58 of 129 (45.0%,
+  Wilson [0.366, 0.536]). The earlier "separates benign/attack perfectly on this data" framing
+  was an artifact of a benign corpus whose only send target was an internal team address; once
+  the benign workload legitimately emails outside the organisation, the bit carries no
+  discriminative information. That recommendation is withdrawn. What remains indicated, and
+  **untested**, is a content- or intent-level gate (does the message body actually depend on
+  the retrieved record? is external routing consistent with the task?). Its precision is an
+  open empirical question, so treat it as a research direction rather than a deployment recipe.
 - Positioning vs the trajectory-monitoring literature (TrajAD, TraceAegis): this does **not** refute
   runtime trajectory anomaly detection — it is a boundary condition. **Trajectory-level monitoring is
   necessary but insufficient: structural traces require task/semantic grounding to avoid false
@@ -96,9 +122,15 @@ reach 76–100% for ground-then-act models. Instead:
 
 ## 5. Open questions
 
-- **`qwq:32b` anomaly**: this reasoning model shows a near-zero FPR profile despite comparable
-  recall behavior to the other OSS models (see §3). Mechanism unexplained; not investigated
-  further in this note.
+- **`qwq:32b` anomaly — RESOLVED, no longer open (see §3).** It was a feature-definition
+  artifact, not a model property: 0/320 benign `recall_before_send=1` under the superseded
+  first-occurrence definition versus 40/320 under the released any-preceding definition, all
+  40 in the `k=1 mandatory` cell, mechanism = send → recall-to-revise → re-send.
+- **Act-without-grounding phenotype membership is interface-dependent, and this note measured
+  only exact-key recall.** GPT-4.1 is act-without-grounding here but shows 82.5% benign
+  `search_before_send` under semantic `memory_search` (V3-2 H4), so every 0% FPR in §3 is
+  conditional on the exact-key interface and should not be carried over to a semantic-search
+  deployment.
 - **Provider alias mutability**: frontier models accessed via undated API aliases; exact checkpoints not
   pinnable; `system_fingerprint` (OpenAI only; Gemini/Claude return none) monitors backend drift, does
   not guarantee reproducibility.

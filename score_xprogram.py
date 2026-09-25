@@ -1,8 +1,17 @@
 """
-score_xprogram.py — unified clustered-CI scorer for the X-program (Addendum A2/F4).
+score_xprogram.py — unified clustered-CI metrics emitter for the X-program (Addendum A2/F4).
 Reads raw JSONL (scenario_id-stamped) for X1/X4/X5/X6/B+ and X2, applies the frozen
-clustered bootstrap per Level-1 arm cell, paired contrast for X1 obs-vs-impl, and the
-Level-2 decision tree. Writes results/xprogram_scored.json.
+clustered bootstrap per Level-1 arm cell, and the paired contrast for X1 obs-vs-impl.
+Writes results/xprogram_scored.json.
+
+Scope note (corrected): this script computes point estimates, clustered/Wilson/Kish
+confidence intervals, and boolean cluster-size gates. It does NOT assign the Level-2
+decision-tree branch labels (BOUNDARY CONFIRMED, LOW-CLUSTER, UNDERPOWERED, INCONCLUSIVE,
+NECESSITY GENERALIZES, ATTACK NOT VIABLE, ORACLE-FRAGILE, ARCHITECTURE-DEPENDENT BREACH,
+etc.) that PROGRAM_EXECUTION_ADDENDUM.md's ordered trees define -- those are assigned by
+hand in paper.tex prose from the metrics this script emits, not mechanically by this
+script. An earlier version of this docstring said "applies... the Level-2 decision tree",
+which overstated what the code does; corrected here rather than left standing.
 
 Usage: .venv/bin/python paper_a/score_xprogram.py [--exp x1|x4|x5|x6|bplus|x2|all]
 """

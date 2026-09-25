@@ -21,21 +21,21 @@
   note={arXiv:2602.15654}
 }
 
-@misc{ma2026vigil,
+@misc{li2026vigil,
   title={{VIGIL}: Runtime Enforcement of Behavioral Specifications in {AI} Agent Skills},
   author={Li, Ying and others},
   year={2026},
   note={arXiv:2606.26524}
 }
 
-@misc{chen2026memmorph,
-  title={{MemMorph}: Tool Hijacking via Memory Poisoning},
+@misc{zhang2026memmorph,
+  title={{MemMorph}: Tool Hijacking in {LLM} Agents via Memory Poisoning},
   author={Zhang, Xuanye and others},
   year={2026},
   note={arXiv:2605.26154}
 }
 
-@misc{zhang2026mpbench,
+@misc{dash2026mpbench,
   title={From Untrusted Input to Trusted Memory: A Systematic Study of Memory Poisoning Attacks in {LLM} Agents},
   author={Dash, Pritam and others},
   year={2026},
@@ -49,7 +49,7 @@
   note={arXiv:2605.14421}
 }
 
-@misc{hayase2022perd,
+@misc{garciasoto2022perd,
   title={{PerD}: Perturbation Sensitivity-Based Neural Trojan Detection Framework on {NLP} Applications},
   author={Garcia-soto, Diego and Chen, Huili and Koushanfar, Farinaz},
   year={2022},
@@ -124,4 +124,116 @@
   author={Leong, Jun Wen},
   year={2026},
   note={arXiv:2608.28502}
+}
+
+% ─── Tooling and statistical methods ────────────────────────────────────────
+% Added in the third self-audit pass. Every one of these is load-bearing for a
+% number in the paper -- the estimator, the retrieval arms, the design-effect
+% correction, the bootstrap intervals and the zero-event bounds -- and none was
+% previously cited.
+
+@article{pedregosa2011scikit,
+  title={Scikit-learn: Machine Learning in {P}ython},
+  author={Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and
+          Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and
+          Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and
+          Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and
+          Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and
+          Duchesnay, {\'E}douard},
+  journal={Journal of Machine Learning Research},
+  volume={12},
+  pages={2825--2830},
+  year={2011}
+}
+
+@article{breiman2001random,
+  title={Random Forests},
+  author={Breiman, Leo},
+  journal={Machine Learning},
+  volume={45},
+  number={1},
+  pages={5--32},
+  year={2001}
+}
+
+@article{johnson2021faiss,
+  title={Billion-scale similarity search with {GPU}s},
+  author={Johnson, Jeff and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+  journal={IEEE Transactions on Big Data},
+  volume={7},
+  number={3},
+  pages={535--547},
+  year={2021},
+  note={arXiv:1702.08734}
+}
+
+@misc{chase2022langchain,
+  title={{LangChain}},
+  author={Chase, Harrison},
+  year={2022},
+  note={Software. \url{https://github.com/langchain-ai/langchain};
+        {LangGraph}: \url{https://github.com/langchain-ai/langgraph}}
+}
+
+@book{kish1965survey,
+  title={Survey Sampling},
+  author={Kish, Leslie},
+  publisher={John Wiley \& Sons},
+  address={New York},
+  year={1965}
+}
+
+@article{efron1987better,
+  title={Better Bootstrap Confidence Intervals},
+  author={Efron, Bradley},
+  journal={Journal of the American Statistical Association},
+  volume={82},
+  number={397},
+  pages={171--185},
+  year={1987}
+}
+
+@article{wilson1927probable,
+  title={Probable Inference, the Law of Succession, and Statistical Inference},
+  author={Wilson, Edwin B.},
+  journal={Journal of the American Statistical Association},
+  volume={22},
+  number={158},
+  pages={209--212},
+  year={1927}
+}
+
+% ─── Provenance granularity and observability substrate ─────────────────────
+% Added after the prior-art check of the third self-audit pass. These occupy the
+% territory adjacent to this paper's coverage/identification distinction and were
+% previously uncited.
+
+@misc{fan2026pact,
+  title={The Granularity Mismatch in Agent Security: Argument-Level Provenance Solves Enforcement and Isolates the {LLM} Reasoning Bottleneck},
+  author={Fan, Linfeng and Li, Ziwei and Tian, Yuan and Wang, Yichen and Li, Rongsheng and Wang, Xiong},
+  year={2026},
+  note={arXiv:2605.11039}
+}
+
+@misc{chinaei2026laundering,
+  title={Causality Laundering: Denial-Feedback Leakage in Tool-Calling {LLM} Agents},
+  author={Chinaei, Mohammad Hossein},
+  year={2026},
+  note={arXiv:2604.04035}
+}
+
+@misc{yu2026attribution,
+  title={The Attribution Blind Spot: Detecting When Language Models Rely on Memory Rather Than Retrieved Context},
+  author={Yu, Zhe and Xing, Wenpeng and Wei, Yunzhao and Yang, Bo and Ye, Chen and Li, Gaolei and Han, Meng},
+  year={2026},
+  note={arXiv:2605.26778}
+}
+
+@misc{otel2026genai,
+  title={{OpenTelemetry} Semantic Conventions for Generative {AI} Systems},
+  author={{OpenTelemetry Authors}},
+  year={2026},
+  note={Specification. Defines spans for model invocation, tool execution,
+        retrieval and memory operations as distinct first-class span types.
+        \url{https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/gen-ai-spans.md}}
 }

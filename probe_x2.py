@@ -127,7 +127,11 @@ def confirm(model):
         outfile = RES / f"x2_{arm}_{slug}.jsonl"
         existing = [json.loads(l) for l in open(outfile)] if outfile.exists() else []
         done = len(existing); succ = sum(1 for r in existing if r.get("attack_success"))
-        rng = random.Random(1000 + hash((model, arm)) % 9999)
+        # Deterministic seed (see probe_v3_1.py): built-in hash() is PYTHONHASHSEED-salted
+        # and non-reproducible across processes; blake2b is stable.
+        import hashlib
+        _cell_key = f"{model}|{arm}".encode("utf-8")
+        rng = random.Random(1000 + int.from_bytes(hashlib.blake2b(_cell_key, digest_size=8).digest(), "big") % 9999)
         print(f"  {arm}/{model}: {done} trials, {succ} succ")
         with open(outfile, "a") as f:
             while succ < TARGET_SUCC and done < CAP:

@@ -1,0 +1,1860 @@
+{
+  "purpose": "Measured git-provenance coverage of the released raw trial records. Replaces the paper's earlier unqualified claim that all experiments record git commit hashes, which the released tree does not support.",
+  "totals": {
+    "files": 161,
+    "files_with_any_sha": 20,
+    "records": 22869,
+    "records_with_sha": 1076,
+    "pct_records_with_sha": 4.71,
+    "records_with_dirty_sha": 1076,
+    "pct_of_stamped_that_are_dirty": 100.0,
+    "distinct_shas": {
+      "116f085-dirty": 208,
+      "1cb5348-dirty": 190,
+      "64d3508-dirty": 2,
+      "96e63e8-dirty": 72,
+      "9740a7f-dirty": 72,
+      "bd8c8aa-dirty": 2,
+      "c774755-dirty": 34,
+      "cb73854-dirty": 80,
+      "dc7ab8c-dirty": 200,
+      "ecb0774-dirty": 16,
+      "fe38f73-dirty": 200
+    }
+  },
+  "unstamped_collections": [
+    "bplus",
+    "cross_framework",
+    "prospective_eval",
+    "v3_2_k2",
+    "v3_2_k8",
+    "v3_3_pilot",
+    "v3_4",
+    "x1",
+    "x1_v2_pilot",
+    "x2",
+    "x4",
+    "x4_detbug_v1",
+    "x4_v2_pilot",
+    "x5",
+    "x5_buggy_v1",
+    "x6",
+    "x6_buggy_v1"
+  ],
+  "files_with_multiple_shas": {
+    "run_manifest.jsonl": {
+      "bd8c8aa-dirty": 2,
+      "64d3508-dirty": 2
+    },
+    "v3_1/v3_1_gpt_4_1_control.jsonl": {
+      "96e63e8-dirty": 18,
+      "9740a7f-dirty": 18,
+      "ecb0774-dirty": 4
+    },
+    "v3_1/v3_1_gpt_4_1_treatment.jsonl": {
+      "96e63e8-dirty": 18,
+      "9740a7f-dirty": 18,
+      "ecb0774-dirty": 4
+    },
+    "v3_1/v3_1_claude_sonnet_4_6_control.jsonl": {
+      "96e63e8-dirty": 18,
+      "9740a7f-dirty": 18,
+      "ecb0774-dirty": 4
+    },
+    "v3_1/v3_1_claude_sonnet_4_6_treatment.jsonl": {
+      "96e63e8-dirty": 18,
+      "9740a7f-dirty": 18,
+      "ecb0774-dirty": 4
+    }
+  },
+  "by_collection": {
+    "bplus": {
+      "n_records": 6480,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 12,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "cross_framework": {
+      "n_records": 840,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 14,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "prospective_eval": {
+      "n_records": 600,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 1,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "(top level)": {
+      "n_records": 4,
+      "n_with_sha": 4,
+      "n_dirty": 4,
+      "files": 1,
+      "files_with_sha": 1,
+      "shas": [
+        "64d3508-dirty",
+        "bd8c8aa-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_1": {
+      "n_records": 240,
+      "n_with_sha": 240,
+      "n_dirty": 240,
+      "files": 6,
+      "files_with_sha": 6,
+      "shas": [
+        "96e63e8-dirty",
+        "9740a7f-dirty",
+        "cb73854-dirty",
+        "ecb0774-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_1_saveprov": {
+      "n_records": 208,
+      "n_with_sha": 208,
+      "n_dirty": 208,
+      "files": 2,
+      "files_with_sha": 2,
+      "shas": [
+        "116f085-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_2": {
+      "n_records": 311,
+      "n_with_sha": 200,
+      "n_dirty": 200,
+      "files": 6,
+      "files_with_sha": 5,
+      "shas": [
+        "fe38f73-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_2_k2": {
+      "n_records": 160,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 4,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "v3_2_k8": {
+      "n_records": 160,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 4,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "v3_3": {
+      "n_records": 190,
+      "n_with_sha": 190,
+      "n_dirty": 190,
+      "files": 3,
+      "files_with_sha": 3,
+      "shas": [
+        "1cb5348-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_3_pilot": {
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 1,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "v3_4": {
+      "n_records": 345,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 6,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "v3_5": {
+      "n_records": 200,
+      "n_with_sha": 200,
+      "n_dirty": 200,
+      "files": 2,
+      "files_with_sha": 2,
+      "shas": [
+        "dc7ab8c-dirty"
+      ],
+      "stamped": true
+    },
+    "v3_fmt": {
+      "n_records": 34,
+      "n_with_sha": 34,
+      "n_dirty": 34,
+      "files": 1,
+      "files_with_sha": 1,
+      "shas": [
+        "c774755-dirty"
+      ],
+      "stamped": true
+    },
+    "x1": {
+      "n_records": 2124,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 12,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x1_v2_pilot": {
+      "n_records": 871,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 12,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x2": {
+      "n_records": 401,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 4,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x4": {
+      "n_records": 1152,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 8,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x4_detbug_v1": {
+      "n_records": 1152,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 8,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x4_v2_pilot": {
+      "n_records": 618,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 8,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x5": {
+      "n_records": 1016,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 8,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x5_buggy_v1": {
+      "n_records": 960,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 8,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x6": {
+      "n_records": 2047,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 12,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    },
+    "x6_buggy_v1": {
+      "n_records": 2736,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "files": 18,
+      "files_with_sha": 0,
+      "shas": [],
+      "stamped": false
+    }
+  },
+  "per_file": {
+    "bplus/bplus_email_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_email_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_pilot_email_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 180,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_pilot_email_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 180,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_pilot_share_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 180,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_pilot_share_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 180,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_share_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/bplus_share_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/legacy_2026-09-11/bplus_email_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/legacy_2026-09-11/bplus_email_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/legacy_2026-09-11/bplus_share_gpt_4_1.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "bplus/legacy_2026-09-11/bplus_share_gpt_4o.jsonl": {
+      "collection": "bplus",
+      "n_records": 720,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/langchain_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 100,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/langchain_benign_memory.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 100,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/langchain_benign_memory_BROKEN_key_mismatch_legacy.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 100,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/langchain_benign_no_memory.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 50,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/raw_benign_memory.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 100,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/raw_benign_memory_BROKEN_key_mismatch_legacy.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 100,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/raw_benign_no_memory.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 50,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gemini-2_5-flash_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gemini-2_5-pro_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gpt-4_1-mini_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gpt-5-nano_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gpt-5_1_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gpt-5_2_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "cross_framework/sweep_gpt-5_attack.jsonl": {
+      "collection": "cross_framework",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "prospective_eval/prospective_trials.jsonl": {
+      "collection": "prospective_eval",
+      "n_records": 600,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "run_manifest.jsonl": {
+      "collection": "(top level)",
+      "n_records": 4,
+      "n_with_sha": 4,
+      "n_dirty": 4,
+      "distinct_shas": {
+        "bd8c8aa-dirty": 2,
+        "64d3508-dirty": 2
+      },
+      "n_distinct_shas": 2,
+      "guard_hashes_constant": {}
+    },
+    "v3_1/v3_1_gpt_4_1_control.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "96e63e8-dirty": 18,
+        "9740a7f-dirty": 18,
+        "ecb0774-dirty": 4
+      },
+      "n_distinct_shas": 3,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1/v3_1_gpt_4_1_treatment.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "96e63e8-dirty": 18,
+        "9740a7f-dirty": 18,
+        "ecb0774-dirty": 4
+      },
+      "n_distinct_shas": 3,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1/v3_1_gpt_4o_control.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "cb73854-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1/v3_1_gpt_4o_treatment.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "cb73854-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1/v3_1_claude_sonnet_4_6_control.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "96e63e8-dirty": 18,
+        "9740a7f-dirty": 18,
+        "ecb0774-dirty": 4
+      },
+      "n_distinct_shas": 3,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1/v3_1_claude_sonnet_4_6_treatment.jsonl": {
+      "collection": "v3_1",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "96e63e8-dirty": 18,
+        "9740a7f-dirty": 18,
+        "ecb0774-dirty": 4
+      },
+      "n_distinct_shas": 3,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1_saveprov/v3_1_saveprov_gpt_4_1_treatment.jsonl": {
+      "collection": "v3_1_saveprov",
+      "n_records": 88,
+      "n_with_sha": 88,
+      "n_dirty": 88,
+      "distinct_shas": {
+        "116f085-dirty": 88
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_1_saveprov/v3_1_saveprov_gpt_4o_treatment.jsonl": {
+      "collection": "v3_1_saveprov",
+      "n_records": 120,
+      "n_with_sha": 120,
+      "n_dirty": 120,
+      "distinct_shas": {
+        "116f085-dirty": 120
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_2/v3_2_gpt_4_1_b.jsonl": {
+      "collection": "v3_2",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "fe38f73-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_2/v3_2_gpt_4_1_benign.jsonl": {
+      "collection": "v3_2",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "fe38f73-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {}
+    },
+    "v3_2/v3_2_gpt_4_1_c.jsonl": {
+      "collection": "v3_2",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "fe38f73-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_2/v3_2_gpt_4o_b.jsonl": {
+      "collection": "v3_2",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "fe38f73-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_2/v3_2_gpt_4o_b_fresh_2026_09.jsonl": {
+      "collection": "v3_2",
+      "n_records": 111,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2/v3_2_gpt_4o_c.jsonl": {
+      "collection": "v3_2",
+      "n_records": 40,
+      "n_with_sha": 40,
+      "n_dirty": 40,
+      "distinct_shas": {
+        "fe38f73-dirty": 40
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_2_k2/v3_2_k2_gpt_4_1_b.jsonl": {
+      "collection": "v3_2_k2",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k2/v3_2_k2_gpt_4_1_c.jsonl": {
+      "collection": "v3_2_k2",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k2/v3_2_k2_gpt_4o_b.jsonl": {
+      "collection": "v3_2_k2",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k2/v3_2_k2_gpt_4o_c.jsonl": {
+      "collection": "v3_2_k2",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k8/v3_2_k8_gpt_4_1_b.jsonl": {
+      "collection": "v3_2_k8",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k8/v3_2_k8_gpt_4_1_c.jsonl": {
+      "collection": "v3_2_k8",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k8/v3_2_k8_gpt_4o_b.jsonl": {
+      "collection": "v3_2_k8",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_2_k8/v3_2_k8_gpt_4o_c.jsonl": {
+      "collection": "v3_2_k8",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_3/v3_3_gemini_2_5_pro_benign.jsonl": {
+      "collection": "v3_3",
+      "n_records": 60,
+      "n_with_sha": 60,
+      "n_dirty": 60,
+      "distinct_shas": {
+        "1cb5348-dirty": 60
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_3/v3_3_gemini_2_5_pro_control.jsonl": {
+      "collection": "v3_3",
+      "n_records": 60,
+      "n_with_sha": 60,
+      "n_dirty": 60,
+      "distinct_shas": {
+        "1cb5348-dirty": 60
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_3/v3_3_gemini_2_5_pro_treatment.jsonl": {
+      "collection": "v3_3",
+      "n_records": 70,
+      "n_with_sha": 70,
+      "n_dirty": 70,
+      "distinct_shas": {
+        "1cb5348-dirty": 70
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_3_pilot/pilot_gemini_2_5_pro_control.jsonl": {
+      "collection": "v3_3_pilot",
+      "n_records": 20,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/legacy_proxy/v3_4_gpt_4_1_implicit_PROXY_legacy.jsonl": {
+      "collection": "v3_4",
+      "n_records": 45,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/v3_4_gpt_4_1_implicit.jsonl": {
+      "collection": "v3_4",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/v3_4_gpt_4_1_mini_benign.jsonl": {
+      "collection": "v3_4",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/v3_4_gpt_4_1_mini_implicit.jsonl": {
+      "collection": "v3_4",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/v3_4_gpt_4_1_mini_observable.jsonl": {
+      "collection": "v3_4",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_4/v3_4_gpt_4_1_observable.jsonl": {
+      "collection": "v3_4",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "v3_5/v3_5_gemini_2_5_pro.jsonl": {
+      "collection": "v3_5",
+      "n_records": 100,
+      "n_with_sha": 100,
+      "n_dirty": 100,
+      "distinct_shas": {
+        "dc7ab8c-dirty": 100
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_5/v3_5_gpt_4_1.jsonl": {
+      "collection": "v3_5",
+      "n_records": 100,
+      "n_with_sha": 100,
+      "n_dirty": 100,
+      "distinct_shas": {
+        "dc7ab8c-dirty": 100
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "v3_fmt/fmt_gpt-4_1_v32prefix.jsonl": {
+      "collection": "v3_fmt",
+      "n_records": 34,
+      "n_with_sha": 34,
+      "n_dirty": 34,
+      "distinct_shas": {
+        "c774755-dirty": 34
+      },
+      "n_distinct_shas": 1,
+      "guard_hashes_constant": {
+        "prompt_hash": true,
+        "tool_schema_hash": true
+      }
+    },
+    "x1/x1_minja_implicit_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_minja_implicit_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_minja_nopoison_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_minja_nopoison_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_minja_observable_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 252,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_minja_observable_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_implicit_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_implicit_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_nopoison_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_nopoison_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_observable_gpt_4_1.jsonl": {
+      "collection": "x1",
+      "n_records": 36,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1/x1_zombie_observable_gpt_4o.jsonl": {
+      "collection": "x1",
+      "n_records": 36,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_implicit_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_implicit_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_nopoison_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_nopoison_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_observable_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_minja_observable_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_implicit_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 31,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_implicit_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_nopoison_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_nopoison_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_observable_gpt_4_1.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x1_v2_pilot/x1_zombie_observable_gpt_4o.jsonl": {
+      "collection": "x1_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x2/x2_benign_qwen2_5_32b.jsonl": {
+      "collection": "x2",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x2/x2_control_qwen2_5_32b.jsonl": {
+      "collection": "x2",
+      "n_records": 150,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x2/x2_pilot_qwen2_5_32b.jsonl": {
+      "collection": "x2",
+      "n_records": 41,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x2/x2_treatment_qwen2_5_32b.jsonl": {
+      "collection": "x2",
+      "n_records": 150,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_control_gpt_4_1.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_control_gpt_4o.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_keystone_gpt_4_1.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_keystone_gpt_4o.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_nopoison_gpt_4_1.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_nopoison_gpt_4o.jsonl": {
+      "collection": "x4",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_treatment_gpt_4_1.jsonl": {
+      "collection": "x4",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4/x4_treatment_gpt_4o.jsonl": {
+      "collection": "x4",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_control_gpt_4_1.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_control_gpt_4o.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_keystone_gpt_4_1.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_keystone_gpt_4o.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_nopoison_gpt_4_1.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_nopoison_gpt_4o.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 72,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_treatment_gpt_4_1.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_detbug_v1/x4_treatment_gpt_4o.jsonl": {
+      "collection": "x4_detbug_v1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_control_gpt_4_1.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 40,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_control_gpt_4o.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 38,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_keystone_gpt_4_1.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_keystone_gpt_4o.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_nopoison_gpt_4_1.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_nopoison_gpt_4o.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_treatment_gpt_4_1.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 150,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x4_v2_pilot/x4_treatment_gpt_4o.jsonl": {
+      "collection": "x4_v2_pilot",
+      "n_records": 150,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A1_gpt_4_1.jsonl": {
+      "collection": "x5",
+      "n_records": 147,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A1_gpt_4o.jsonl": {
+      "collection": "x5",
+      "n_records": 149,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A2_gpt_4_1.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A2_gpt_4o.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A4_gpt_4_1.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A4_gpt_4o.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A5_gpt_4_1.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5/x5_A5_gpt_4o.jsonl": {
+      "collection": "x5",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A1_gpt_4_1.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A1_gpt_4o.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A2_gpt_4_1.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A2_gpt_4o.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A4_gpt_4_1.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A4_gpt_4o.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A5_gpt_4_1.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x5_buggy_v1/x5_A5_gpt_4o.jsonl": {
+      "collection": "x5_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_bm25_implicit_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_bm25_observable_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_implicit_claude_sonnet_5.jsonl": {
+      "collection": "x6",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_implicit_gemini_3_1_pro_preview.jsonl": {
+      "collection": "x6",
+      "n_records": 36,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_implicit_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_implicit_gpt_4o.jsonl": {
+      "collection": "x6",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_observable_claude_sonnet_5.jsonl": {
+      "collection": "x6",
+      "n_records": 134,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_observable_gemini_3_1_pro_preview.jsonl": {
+      "collection": "x6",
+      "n_records": 60,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_observable_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 257,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_faiss_observable_gpt_4o.jsonl": {
+      "collection": "x6",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_summary_implicit_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6/x6_summary_observable_gpt_4_1.jsonl": {
+      "collection": "x6",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_bm25_implicit_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_bm25_implicit_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_bm25_observable_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_bm25_observable_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_implicit_claude_sonnet_5.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_implicit_gemini_3_1_pro_preview.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 48,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_implicit_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_implicit_gpt_4o.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_implicit_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_observable_claude_sonnet_5.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_observable_gemini_3_1_pro_preview.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 48,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_observable_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 360,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_observable_gpt_4o.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 240,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_faiss_observable_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_summary_implicit_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_summary_implicit_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_summary_observable_gpt_4_1.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    },
+    "x6_buggy_v1/x6_summary_observable_qwen2_5_32b.jsonl": {
+      "collection": "x6_buggy_v1",
+      "n_records": 120,
+      "n_with_sha": 0,
+      "n_dirty": 0,
+      "distinct_shas": {},
+      "n_distinct_shas": 0,
+      "guard_hashes_constant": {}
+    }
+  }
+}

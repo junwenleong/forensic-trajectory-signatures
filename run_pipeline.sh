@@ -2,6 +2,10 @@
 # run_pipeline.sh — full X-program API pipeline, 2-key parallel, correct sequencing.
 # KEY = FRONTIER_API_KEY (gpt-4.1 cells); KEY2 = FRONTIER_API_KEY_2 (gpt-4o cells).
 set -u
+# Resolve the repository root from this script's own location rather than hardcoding an
+# absolute path. The previous `cd /Users/<user>/projects/arbitration` leaked the
+# generating machine's filesystem layout into a published artifact and tripped the
+# fail-closed absolute-path guard in scripts/prepare_public_release.py.
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PY=.venv/bin/python
 K1="$FRONTIER_API_KEY"
@@ -25,11 +29,15 @@ fi
 echo "[$(date +%H:%M:%S)] pre-flight OK"
 
 echo "[$(date +%H:%M:%S)] STAGE 1: B+ pilot (both models parallel)"
-run41 paper_a/probe_bplus.py --model gpt-4.1 > $LOG/bplus_41.log 2>&1 &
-run4o paper_a/probe_bplus.py --model gpt-4o   > $LOG/bplus_4o.log 2>&1 &
+run41 paper_a/probe_bplus.py --model gpt-4.1 --phase pilot > $LOG/bplus_41.log 2>&1 &
+run4o paper_a/probe_bplus.py --model gpt-4o   --phase pilot > $LOG/bplus_4o.log 2>&1 &
 wait
-echo "[$(date +%H:%M:%S)] B+ done -> freeze + score"
+echo "[$(date +%H:%M:%S)] B+ pilot done -> freeze"
 $PY paper_a/probe_bplus.py --freeze > $LOG/bplus_freeze.log 2>&1
+echo "[$(date +%H:%M:%S)] STAGE 1b: B+ confirmatory (both models parallel)"
+run41 paper_a/probe_bplus.py --model gpt-4.1 --phase confirmatory > $LOG/bplus_conf_41.log 2>&1 &
+run4o paper_a/probe_bplus.py --model gpt-4o   --phase confirmatory > $LOG/bplus_conf_4o.log 2>&1 &
+wait
 $PY paper_a/probe_bplus.py --score  > $LOG/bplus_score.log 2>&1
 
 echo "[$(date +%H:%M:%S)] STAGE 2: X1 + X4 confirmatory (4 streams: {x1,x4}x{41,4o})"

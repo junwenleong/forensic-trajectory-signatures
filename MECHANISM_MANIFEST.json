@@ -702,7 +702,8 @@
       "point": 0.15,
       "wilson_lower": 0.05
     },
-    "bplus_pilot_N_per_scenario": 20
+    "bplus_pilot_N_per_scenario": 5,
+    "bplus_confirmatory_N_per_scenario": 20
   },
   "bootstrap": {
     "resamples": 10000,
@@ -952,6 +953,282 @@
       "f1dc29136c20718b",
       "c8a65019b1fd925c",
       "f1dc29136c20718b"
+    ],
+    "bplus_email": [
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "bac6ed1cc651bd03",
+      "bac6ed1cc651bd03",
+      "bac6ed1cc651bd03",
+      "bac6ed1cc651bd03",
+      "bac6ed1cc651bd03",
+      "bac6ed1cc651bd03",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "c323629a34faafb5",
+      "c323629a34faafb5",
+      "c323629a34faafb5",
+      "c323629a34faafb5",
+      "c323629a34faafb5",
+      "c323629a34faafb5",
+      "5b82104e37283e4e",
+      "5b82104e37283e4e",
+      "5b82104e37283e4e",
+      "5b82104e37283e4e",
+      "5b82104e37283e4e",
+      "5b82104e37283e4e",
+      "429f69a983fd011c",
+      "429f69a983fd011c",
+      "429f69a983fd011c",
+      "429f69a983fd011c",
+      "429f69a983fd011c",
+      "429f69a983fd011c"
+    ],
+    "bplus_share": [
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "5974f9e72e6d02d1",
+      "33fb5be25cedd574",
+      "33fb5be25cedd574",
+      "33fb5be25cedd574",
+      "33fb5be25cedd574",
+      "33fb5be25cedd574",
+      "33fb5be25cedd574",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "2ff23ac14b702dac",
+      "22cad91b884f3a14",
+      "22cad91b884f3a14",
+      "22cad91b884f3a14",
+      "22cad91b884f3a14",
+      "22cad91b884f3a14",
+      "22cad91b884f3a14",
+      "aa4e0d93e4a91fc7",
+      "aa4e0d93e4a91fc7",
+      "aa4e0d93e4a91fc7",
+      "aa4e0d93e4a91fc7",
+      "aa4e0d93e4a91fc7",
+      "aa4e0d93e4a91fc7",
+      "e8a2cb5501f4b311",
+      "e8a2cb5501f4b311",
+      "e8a2cb5501f4b311",
+      "e8a2cb5501f4b311",
+      "e8a2cb5501f4b311",
+      "e8a2cb5501f4b311"
+    ],
+    "x5": [
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef"
+    ],
+    "x6": [
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "4f80d47faf2fc229",
+      "9ccd1e981adb6911",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef",
+      "adee15713c5bb03a",
+      "598c5376c1f8dbef"
+    ],
+    "v3_1": [
+      "78d31681312f96bc",
+      "81cc636ad3d57562",
+      "0ae1f067d7e14ce5",
+      "d0fc2030ff2bb0ab",
+      "49db06b34ade59e3",
+      "75ad920ce9d06cfb",
+      "f542508a13cc38bc",
+      "700f6d270cb9bde8",
+      "de67ffccab3e5f43",
+      "2d5bd6b059faa353",
+      "457f095e82fee383",
+      "ddb94cb6ed96a2ec",
+      "057f2235afc7dced",
+      "e8757a20ef20f83f",
+      "4dbb499f253b1977",
+      "246ab547ca36626e",
+      "3052b59493949b30",
+      "30e6da5e2b3fa36e"
+    ],
+    "v3_3_attack": [
+      "d44d9b7fcf0f05de",
+      "518fb36e15ef2ed9",
+      "4ca4d1971323b5aa",
+      "431baa3a0e9bcb40",
+      "981792cecba4a1bf",
+      "964899b4ebcec5fd",
+      "c79c2a7f6a4ed9e8",
+      "d6ec3848c504cb41",
+      "12d9a338a366bb37",
+      "23ec57a6e93ec60a",
+      "155554f59f15734f",
+      "c5045c7d213b6907",
+      "e8f364ac0f1da3be",
+      "63e34f905d477a01",
+      "19856595f643343a",
+      "60cd4b9e2f78451e",
+      "2802493240e60a24",
+      "2c46bf4370f5270b",
+      "391cec62e42bf0b0",
+      "1fa60cff5d892ad7",
+      "a960d3137d9533e2",
+      "6e71791158003a35",
+      "5ae73e92464c47fd",
+      "1e56b4ca798d2f86",
+      "26d6c7ddef032cbf",
+      "1a88ccc4a49d0043",
+      "6ee5521e60b4d6b7",
+      "39786590d9551fb0",
+      "19af7cda93fe2764",
+      "24e4fa9604538c2b",
+      "ebd1e5518b0852d4",
+      "8e3ba392b61e1f53",
+      "6f40f85f7e64f929",
+      "c53fd0c21f19d837",
+      "713288b456d7b57d",
+      "ab8fbbb9884ecfd9"
+    ],
+    "v3_3_benign": [
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e"
+    ],
+    "x2_attack": [
+      "d44d9b7fcf0f05de",
+      "518fb36e15ef2ed9",
+      "4ca4d1971323b5aa",
+      "431baa3a0e9bcb40",
+      "981792cecba4a1bf",
+      "964899b4ebcec5fd",
+      "c79c2a7f6a4ed9e8",
+      "d6ec3848c504cb41",
+      "12d9a338a366bb37",
+      "23ec57a6e93ec60a",
+      "155554f59f15734f",
+      "c5045c7d213b6907",
+      "e8f364ac0f1da3be",
+      "63e34f905d477a01",
+      "19856595f643343a",
+      "60cd4b9e2f78451e",
+      "2802493240e60a24",
+      "2c46bf4370f5270b",
+      "391cec62e42bf0b0",
+      "1fa60cff5d892ad7",
+      "a960d3137d9533e2",
+      "6e71791158003a35",
+      "5ae73e92464c47fd",
+      "1e56b4ca798d2f86",
+      "26d6c7ddef032cbf",
+      "1a88ccc4a49d0043",
+      "6ee5521e60b4d6b7",
+      "39786590d9551fb0",
+      "19af7cda93fe2764",
+      "24e4fa9604538c2b",
+      "ebd1e5518b0852d4",
+      "8e3ba392b61e1f53",
+      "6f40f85f7e64f929",
+      "c53fd0c21f19d837",
+      "713288b456d7b57d",
+      "ab8fbbb9884ecfd9"
+    ],
+    "x2_benign": [
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e",
+      "a873016a2a444a4f",
+      "75a753b54906f63e"
     ]
   },
   "inert_factor_audit": {
@@ -972,7 +1249,9 @@
       "n_scenario_ids": 36,
       "n_distinct_frozen_text": 12,
       "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
-      "valid_cluster_unit": "effective_cluster_key (scenario_id INVALID: inert factor(s) ['similarity'])"
+      "declared_cluster_unit": "x_grid.effective_cluster_key",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "x_grid.effective_cluster_key (scenario_id INVALID: inert factor(s) ['similarity'])"
     },
     "x1_zombie": {
       "grid_factors": [
@@ -990,6 +1269,8 @@
       "n_scenario_ids": 36,
       "n_distinct_frozen_text": 12,
       "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "scenario_id",
+      "declared_unit_collapses_inert": true,
       "valid_cluster_unit": "scenario_id"
     },
     "x4": {
@@ -1008,7 +1289,205 @@
       "n_scenario_ids": 36,
       "n_distinct_frozen_text": 12,
       "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "scenario_id",
+      "declared_unit_collapses_inert": true,
       "valid_cluster_unit": "scenario_id"
+    },
+    "bplus_email": {
+      "grid_factors": [
+        "domain",
+        "framing",
+        "similarity"
+      ],
+      "consumed_factors": [
+        "domain"
+      ],
+      "inert_factors": [
+        "framing",
+        "similarity"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 6,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "record_field:cfg_domain",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "record_field:cfg_domain (scenario_id INVALID: inert factor(s) ['framing', 'similarity'])"
+    },
+    "bplus_share": {
+      "grid_factors": [
+        "discoverability",
+        "doctype",
+        "recipient_rep"
+      ],
+      "consumed_factors": [
+        "doctype"
+      ],
+      "inert_factors": [
+        "discoverability",
+        "recipient_rep"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 6,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "record_field:cfg_doctype",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "record_field:cfg_doctype (scenario_id INVALID: inert factor(s) ['discoverability', 'recipient_rep'])"
+    },
+    "x5": {
+      "grid_factors": [
+        "domain",
+        "framing",
+        "similarity"
+      ],
+      "consumed_factors": [
+        "domain",
+        "framing"
+      ],
+      "inert_factors": [
+        "similarity"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 12,
+      "n_distinct_frozen_text": 4,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "x_grid.effective_cluster_key",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "x_grid.effective_cluster_key (scenario_id INVALID: inert factor(s) ['similarity'])"
+    },
+    "x6": {
+      "grid_factors": [
+        "domain",
+        "framing",
+        "similarity"
+      ],
+      "consumed_factors": [
+        "domain",
+        "framing"
+      ],
+      "inert_factors": [
+        "similarity"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 12,
+      "n_distinct_frozen_text": 4,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "x_grid.effective_cluster_key",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "x_grid.effective_cluster_key (scenario_id INVALID: inert factor(s) ['similarity'])"
+    },
+    "v3_1": {
+      "grid_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "consumed_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "inert_factors": [],
+      "has_inert_factor": false,
+      "n_scenario_ids": 18,
+      "n_distinct_frozen_text": 18,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "scenario_id",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "scenario_id"
+    },
+    "v3_3_attack": {
+      "grid_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "consumed_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "inert_factors": [],
+      "has_inert_factor": false,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 36,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "scenario_id",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "scenario_id"
+    },
+    "v3_3_benign": {
+      "grid_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "consumed_factors": [
+        "decoy_facts"
+      ],
+      "inert_factors": [
+        "attacker_address",
+        "cover_task",
+        "trigger_phrasing"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 2,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "record_field:decoy_subset",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "record_field:decoy_subset (scenario_id INVALID: inert factor(s) ['attacker_address', 'cover_task', 'trigger_phrasing'])"
+    },
+    "x2_attack": {
+      "grid_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "consumed_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "inert_factors": [],
+      "has_inert_factor": false,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 36,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "scenario_id",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "scenario_id"
+    },
+    "x2_benign": {
+      "grid_factors": [
+        "attacker_address",
+        "cover_task",
+        "decoy_facts",
+        "trigger_phrasing"
+      ],
+      "consumed_factors": [
+        "decoy_facts"
+      ],
+      "inert_factors": [
+        "attacker_address",
+        "cover_task",
+        "trigger_phrasing"
+      ],
+      "has_inert_factor": true,
+      "n_scenario_ids": 36,
+      "n_distinct_frozen_text": 2,
+      "text_only_diagnostic": "text-level duplication here does NOT by itself imply inertness; a factor may act on harness state instead (see turns / discoverability)",
+      "declared_cluster_unit": "record_field:decoy_subset",
+      "declared_unit_collapses_inert": true,
+      "valid_cluster_unit": "record_field:decoy_subset (scenario_id INVALID: inert factor(s) ['attacker_address', 'cover_task', 'trigger_phrasing'])"
     }
   }
 }
