@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # run_macstudio_queue.sh — X6 open-weight interaction sweep (Regime A), QUEUED after API pipeline.
 set -u
+# Resolve the repository root from this script's own location rather than hardcoding an
+# absolute path (see the matching note in run_pipeline.sh).
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PY=.venv/bin/python
 LOG=/tmp/xprog

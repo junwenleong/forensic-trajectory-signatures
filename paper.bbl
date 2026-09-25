@@ -1,9 +1,26 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Breiman(2001)]{breiman2001random}
+Leo Breiman.
+\newblock Random forests.
+\newblock \emph{Machine Learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
+
+\bibitem[Chase(2022)]{chase2022langchain}
+Harrison Chase.
+\newblock {LangChain}, 2022.
+\newblock Software. \url{https://github.com/langchain-ai/langchain};
+  {LangGraph}: \url{https://github.com/langchain-ai/langgraph}.
+
+\bibitem[Chinaei(2026)]{chinaei2026laundering}
+Mohammad~Hossein Chinaei.
+\newblock Causality laundering: Denial-feedback leakage in tool-calling {LLM}
+  agents, 2026.
+\newblock arXiv:2604.04035.
 
 \bibitem[Dang(2026)]{dang2026enforcing}
 Hung Dang.
@@ -11,7 +28,7 @@ Hung Dang.
   structured-workflow {AI} agents, 2026.
 \newblock arXiv:2604.26274.
 
-\bibitem[Dash et~al.(2026)]{zhang2026mpbench}
+\bibitem[Dash et~al.(2026)]{dash2026mpbench}
 Pritam Dash et~al.
 \newblock From untrusted input to trusted memory: A systematic study of memory
   poisoning attacks in {LLM} agents, 2026.
@@ -26,6 +43,18 @@ Shen Dong, Shaochen Xu, Pengfei He, Yige Li, Jiliang Tang, Tianming Liu, Hui
 \newblock In \emph{Advances in Neural Information Processing Systems}, 2025.
 \newblock arXiv:2503.03704.
 
+\bibitem[Efron(1987)]{efron1987better}
+Bradley Efron.
+\newblock Better bootstrap confidence intervals.
+\newblock \emph{Journal of the American Statistical Association}, 82\penalty0
+  (397):\penalty0 171--185, 1987.
+
+\bibitem[Fan et~al.(2026)Fan, Li, Tian, Wang, Li, and Wang]{fan2026pact}
+Linfeng Fan, Ziwei Li, Yuan Tian, Yichen Wang, Rongsheng Li, and Xiong Wang.
+\newblock The granularity mismatch in agent security: Argument-level provenance
+  solves enforcement and isolates the {LLM} reasoning bottleneck, 2026.
+\newblock arXiv:2605.11039.
+
 \bibitem[Forrest et~al.(1996)Forrest, Hofmeyr, Somayaji, and
   Longstaff]{forrest1996sense}
 Stephanie Forrest, Steven~A Hofmeyr, Anil Somayaji, and Thomas~A Longstaff.
@@ -34,7 +63,7 @@ Stephanie Forrest, Steven~A Hofmeyr, Anil Somayaji, and Thomas~A Longstaff.
   1996.
 
 \bibitem[Garcia-soto et~al.(2022)Garcia-soto, Chen, and
-  Koushanfar]{hayase2022perd}
+  Koushanfar]{garciasoto2022perd}
 Diego Garcia-soto, Huili Chen, and Farinaz Koushanfar.
 \newblock {PerD}: Perturbation sensitivity-based neural trojan detection
   framework on {NLP} applications, 2022.
@@ -45,6 +74,18 @@ Ishrith Gowda.
 \newblock {MEMSAD}: Gradient-coupled anomaly detection for memory poisoning in
   retrieval-augmented agents, 2026.
 \newblock arXiv:2605.03482.
+
+\bibitem[Johnson et~al.(2021)Johnson, Douze, and J{\'e}gou]{johnson2021faiss}
+Jeff Johnson, Matthijs Douze, and Herv{\'e} J{\'e}gou.
+\newblock Billion-scale similarity search with {GPU}s.
+\newblock \emph{IEEE Transactions on Big Data}, 7\penalty0 (3):\penalty0
+  535--547, 2021.
+\newblock arXiv:1702.08734.
+
+\bibitem[Kish(1965)]{kish1965survey}
+Leslie Kish.
+\newblock \emph{Survey Sampling}.
+\newblock John Wiley \& Sons, New York, 1965.
 
 \bibitem[Leong(2026{\natexlab{a}})]{leong2026defense}
 Jun~Wen Leong.
@@ -59,7 +100,7 @@ Jun~Wen Leong.
   {LLM} agent instruction arbitration and external control, 2026{\natexlab{b}}.
 \newblock arXiv:2608.28502.
 
-\bibitem[Li et~al.(2026)]{ma2026vigil}
+\bibitem[Li et~al.(2026)]{li2026vigil}
 Ying Li et~al.
 \newblock {VIGIL}: Runtime enforcement of behavioral specifications in {AI}
   agent skills, 2026.
@@ -71,11 +112,30 @@ Jiahao Liu et~al.
   behavioral anomaly detection, 2025.
 \newblock arXiv:2510.11203.
 
+\bibitem[{OpenTelemetry Authors}(2026)]{otel2026genai}
+{OpenTelemetry Authors}.
+\newblock {OpenTelemetry} semantic conventions for generative {AI} systems,
+  2026.
+\newblock Specification. Defines spans for model invocation, tool execution,
+  retrieval and memory operations as distinct first-class span types.
+  \url{https://github.com/open-telemetry/semantic-conventions/blob/main/docs/gen-ai/gen-ai-spans.md}.
+
 \bibitem[Ouyang \& Hou(2026)Ouyang and Hou]{ouyang2026memlineage}
 Ciyan Ouyang and Rui Hou.
 \newblock {MemLineage}: Lineage-guided enforcement for {LLM} agent memory,
   2026.
 \newblock arXiv:2605.14421.
+
+\bibitem[Pedregosa et~al.(2011)Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
+  Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay]{pedregosa2011scikit}
+Fabian Pedregosa, Ga{\"e}l Varoquaux, Alexandre Gramfort, Vincent Michel,
+  Bertrand Thirion, Olivier Grisel, Mathieu Blondel, Peter Prettenhofer, Ron
+  Weiss, Vincent Dubourg, Jake Vanderplas, Alexandre Passos, David Cournapeau,
+  Matthieu Brucher, Matthieu Perrot, and {\'E}douard Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock \emph{Journal of Machine Learning Research}, 12:\penalty0 2825--2830,
+  2011.
 
 \bibitem[Pulipaka et~al.(2026)]{pulipaka2026hidden}
 Sidharth Pulipaka et~al.
@@ -95,6 +155,12 @@ Christina Warrender, Stephanie Forrest, and Barak Pearlmutter.
 \newblock In \emph{Proceedings of the IEEE Symposium on Security and Privacy},
   1999.
 
+\bibitem[Wilson(1927)]{wilson1927probable}
+Edwin~B. Wilson.
+\newblock Probable inference, the law of succession, and statistical inference.
+\newblock \emph{Journal of the American Statistical Association}, 22\penalty0
+  (158):\penalty0 209--212, 1927.
+
 \bibitem[Xie et~al.(2026)]{xie2026crosssession}
 Yuanbo Xie et~al.
 \newblock What if prompt injection never left? exploring cross-session stored
@@ -107,9 +173,17 @@ Xianglin Yang, Yufei He, Shuo Ji, Bryan Hooi, and Jin~Song Dong.
   self-reinforcing injections, 2026.
 \newblock arXiv:2602.15654.
 
-\bibitem[Zhang et~al.(2026)]{chen2026memmorph}
+\bibitem[Yu et~al.(2026)Yu, Xing, Wei, Yang, Ye, Li, and
+  Han]{yu2026attribution}
+Zhe Yu, Wenpeng Xing, Yunzhao Wei, Bo~Yang, Chen Ye, Gaolei Li, and Meng Han.
+\newblock The attribution blind spot: Detecting when language models rely on
+  memory rather than retrieved context, 2026.
+\newblock arXiv:2605.26778.
+
+\bibitem[Zhang et~al.(2026)]{zhang2026memmorph}
 Xuanye Zhang et~al.
-\newblock {MemMorph}: Tool hijacking via memory poisoning, 2026.
+\newblock {MemMorph}: Tool hijacking in {LLM} agents via memory poisoning,
+  2026.
 \newblock arXiv:2605.26154.
 
 \end{thebibliography}

@@ -1,0 +1,567 @@
+{
+  "purpose": "One decision rule for every zero-event necessity control cell. The paper withdrew X4's and X2's claim to meet the registered <=0.10 criterion once the cluster unit was used; these are the same cells computed the same way, so the rule can be applied uniformly instead of selectively.",
+  "z": 1.96,
+  "rule": "zero-event cells: the scenario-clustered percentile bootstrap is degenerate, so the governing bound is Wilson on the count of success-contributing scenario clusters; the Kish-weighted bound is the conservative limit on the trial-weighted rate (icc=1).",
+  "cells": [
+    {
+      "label": "V3-1 control, exact-key recall, gpt-4.1",
+      "files": [
+        "v3_1/v3_1_gpt_4_1_control.jsonl"
+      ],
+      "violation_field": "recall_before_send",
+      "n_trials": 40,
+      "n_successes": 28,
+      "n_violations": 0,
+      "contributing_clusters": 14,
+      "cluster_sizes": [
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.12064720365810762,
+      "cluster_unit_wilson_upper": 0.21531701192718142,
+      "kish_n_eff": 12.645,
+      "kish_wilson_upper": 0.23301119803650866,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-1 control, exact-key recall, gpt-4o",
+      "files": [
+        "v3_1/v3_1_gpt_4o_control.jsonl"
+      ],
+      "violation_field": "recall_before_send",
+      "n_trials": 40,
+      "n_successes": 30,
+      "n_violations": 0,
+      "contributing_clusters": 14,
+      "cluster_sizes": [
+        5,
+        4,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.113517091390478,
+      "cluster_unit_wilson_upper": 0.21531701192718142,
+      "kish_n_eff": 10.714,
+      "kish_wilson_upper": 0.26392073113281617,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-1 control pooled (the 58/58 cell)",
+      "files": [
+        "v3_1/v3_1_gpt_4_1_control.jsonl",
+        "v3_1/v3_1_gpt_4o_control.jsonl"
+      ],
+      "violation_field": "recall_before_send",
+      "n_trials": 80,
+      "n_successes": 58,
+      "n_violations": 0,
+      "contributing_clusters": 16,
+      "cluster_sizes": [
+        7,
+        7,
+        5,
+        5,
+        5,
+        5,
+        4,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.062119996895293766,
+      "cluster_unit_wilson_upper": 0.19361341827271994,
+      "kish_n_eff": 12.742,
+      "kish_wilson_upper": 0.23164462037945244,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-2 arm B, semantic search, gpt-4.1 (preregistered send-only endpoint)",
+      "files": [
+        "v3_2/v3_2_gpt_4_1_b.jsonl"
+      ],
+      "violation_field": "search_before_send",
+      "n_trials": 40,
+      "n_successes": 33,
+      "n_violations": 0,
+      "contributing_clusters": 14,
+      "cluster_sizes": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.10427343003561192,
+      "cluster_unit_wilson_upper": 0.21531701192718142,
+      "kish_n_eff": 11.227,
+      "kish_wilson_upper": 0.25494405170318835,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-2 arm B, semantic search, gpt-4.1 (corrected draft-or-send endpoint)",
+      "files": [
+        "v3_2/v3_2_gpt_4_1_b.jsonl"
+      ],
+      "violation_field": "search_before_send",
+      "n_trials": 40,
+      "n_successes": 38,
+      "n_violations": 0,
+      "contributing_clusters": 14,
+      "cluster_sizes": [
+        5,
+        5,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.09181293258383999,
+      "cluster_unit_wilson_upper": 0.21531701192718142,
+      "kish_n_eff": 11.108,
+      "kish_wilson_upper": 0.2569753752171443,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-2 arm B, semantic search, gpt-4o (original cohort, send-only)",
+      "files": [
+        "v3_2/v3_2_gpt_4o_b.jsonl"
+      ],
+      "violation_field": "search_before_send",
+      "n_trials": 40,
+      "n_successes": 13,
+      "n_violations": 0,
+      "contributing_clusters": 6,
+      "cluster_sizes": [
+        6,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.22810184305529166,
+      "cluster_unit_wilson_upper": 0.3903430336530645,
+      "kish_n_eff": 3.449,
+      "kish_wilson_upper": 0.5269265566075764,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-2 arm B gpt-4o POOLED (the 43/43 cell, send-only)",
+      "files": [
+        "v3_2/v3_2_gpt_4o_b.jsonl",
+        "v3_2/v3_2_gpt_4o_b_fresh_2026_09.jsonl"
+      ],
+      "violation_field": "search_before_send",
+      "n_trials": 151,
+      "n_successes": 43,
+      "n_violations": 0,
+      "contributing_clusters": 13,
+      "cluster_sizes": [
+        7,
+        6,
+        5,
+        4,
+        4,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.08201257002322722,
+      "cluster_unit_wilson_upper": 0.22810184305529166,
+      "kish_n_eff": 10.104,
+      "kish_wilson_upper": 0.2754738534226787,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "V3-3 control, ground-then-act, gemini-2.5-pro",
+      "files": [
+        "v3_3/v3_3_gemini_2_5_pro_control.jsonl"
+      ],
+      "violation_field": "recall_before_send",
+      "n_trials": 60,
+      "n_successes": 19,
+      "n_violations": 0,
+      "contributing_clusters": 12,
+      "cluster_sizes": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.16818436536845052,
+      "cluster_unit_wilson_upper": 0.2425007574992425,
+      "kish_n_eff": 10.314,
+      "kish_wilson_upper": 0.27137828586191304,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "X2 control, ground-then-act, qwen2.5:32b",
+      "files": [
+        "x2/x2_control_qwen2_5_32b.jsonl"
+      ],
+      "violation_field": "recall_before_send",
+      "n_trials": 150,
+      "n_successes": 24,
+      "n_violations": 0,
+      "contributing_clusters": 7,
+      "cluster_sizes": [
+        6,
+        6,
+        3,
+        3,
+        3,
+        2,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.13798057582897535,
+      "cluster_unit_wilson_upper": 0.35433884297520657,
+      "kish_n_eff": 5.538,
+      "kish_wilson_upper": 0.4095495519137155,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "X4 control, document-share channel, gpt-4.1",
+      "files": [
+        "x4/x4_control_gpt_4_1.jsonl"
+      ],
+      "violation_field": "recall_before_exfil",
+      "n_trials": 72,
+      "n_successes": 50,
+      "n_violations": 0,
+      "contributing_clusters": 28,
+      "cluster_sizes": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.07135003417431873,
+      "cluster_unit_wilson_upper": 0.12064720365810762,
+      "kish_n_eff": 26.596,
+      "kish_wilson_upper": 0.12621337505885827,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "X4 control, document-share channel, gpt-4o",
+      "files": [
+        "x4/x4_control_gpt_4o.jsonl"
+      ],
+      "violation_field": "recall_before_exfil",
+      "n_trials": 72,
+      "n_successes": 62,
+      "n_violations": 0,
+      "contributing_clusters": 33,
+      "cluster_sizes": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.05834609122500061,
+      "cluster_unit_wilson_upper": 0.10427343003561192,
+      "kish_n_eff": 32.033,
+      "kish_wilson_upper": 0.10708312582230119,
+      "meets_0.10_on_cluster_unit": false
+    },
+    {
+      "label": "X4 control POOLED across models (POST-HOC; the registered gate is per arm)",
+      "files": [
+        "x4/x4_control_gpt_4_1.jsonl",
+        "x4/x4_control_gpt_4o.jsonl"
+      ],
+      "violation_field": "recall_before_exfil",
+      "n_trials": 144,
+      "n_successes": 112,
+      "n_violations": 0,
+      "contributing_clusters": 35,
+      "cluster_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "clusters_with_violation": 0,
+      "trial_level_wilson_upper": 0.03316252537948371,
+      "cluster_unit_wilson_upper": 0.09890426758938868,
+      "kish_n_eff": 32.497,
+      "kish_wilson_upper": 0.10571559520216416,
+      "meets_0.10_on_cluster_unit": true
+    }
+  ],
+  "benign_keystones": [
+    {
+      "label": "V3-3 benign keystone, gemini-2.5-pro",
+      "files": [
+        "v3_3/v3_3_gemini_2_5_pro_benign.jsonl"
+      ],
+      "recall_before_send_1": 53,
+      "n_sessions": 60,
+      "rate": 0.8833,
+      "nominal_scenario_id_clusters": 36,
+      "effective_cluster_key": "decoy_subset",
+      "effective_clusters": 2,
+      "effective_cluster_sizes": [
+        35,
+        25
+      ],
+      "per_effective_cluster": {
+        "d0": "33/35",
+        "d1": "20/25"
+      },
+      "trial_level_wilson": [
+        0.7782,
+        0.9423
+      ],
+      "kish_n_eff": 1.946,
+      "cluster_unit_wilson": [
+        0.264,
+        0.9938
+      ],
+      "scenario_clustered_bootstrap_valid": false,
+      "why_invalid": "the runner varies only the decoy subset, so a bootstrap over the 36 nominal scenario_ids resamples duplicated configurations and reports a width the design does not support"
+    },
+    {
+      "label": "X2 benign keystone, qwen2.5:32b (same runner as V3-3)",
+      "files": [
+        "x2/x2_benign_qwen2_5_32b.jsonl"
+      ],
+      "recall_before_send_1": 60,
+      "n_sessions": 60,
+      "rate": 1.0,
+      "nominal_scenario_id_clusters": 31,
+      "effective_cluster_key": "decoy_subset",
+      "effective_clusters": 2,
+      "effective_cluster_sizes": [
+        30,
+        30
+      ],
+      "per_effective_cluster": {
+        "d0": "30/30",
+        "d1": "30/30"
+      },
+      "trial_level_wilson": [
+        0.9398,
+        1.0
+      ],
+      "kish_n_eff": 2.0,
+      "cluster_unit_wilson": [
+        0.3424,
+        1.0
+      ],
+      "scenario_clustered_bootstrap_valid": false,
+      "why_invalid": "the runner varies only the decoy subset, so a bootstrap over the 36 nominal scenario_ids resamples duplicated configurations and reports a width the design does not support"
+    }
+  ],
+  "distinct_configuration_census": {
+    "note": "The paper's 135 is the SUM of per-cell contributing-cluster counts over the eight non-overlapping cells (added 2026-09-25: X2 control, previously omitted despite the module purpose string above already describing it as withdrawn on the cluster unit; was 128 over seven cells before X2 was added). Because arms within one experiment share one scenario grid, that sum counts a configuration once per model. Both figures are correct; they are different quantities.",
+    "per_experiment": {
+      "V3-1 control (18-config grid, 2 models)": {
+        "files": [
+          "v3_1/v3_1_gpt_4_1_control.jsonl",
+          "v3_1/v3_1_gpt_4o_control.jsonl"
+        ],
+        "per_file_cluster_counts": [
+          14,
+          14
+        ],
+        "distinct_configurations": 16
+      },
+      "V3-2 arm B (18-config grid, 2 models + fresh cohort)": {
+        "files": [
+          "v3_2/v3_2_gpt_4_1_b.jsonl",
+          "v3_2/v3_2_gpt_4o_b.jsonl",
+          "v3_2/v3_2_gpt_4o_b_fresh_2026_09.jsonl"
+        ],
+        "per_file_cluster_counts": [
+          14,
+          6,
+          13
+        ],
+        "distinct_configurations": 17
+      },
+      "V3-3 control (36-config grid, 1 model)": {
+        "files": [
+          "v3_3/v3_3_gemini_2_5_pro_control.jsonl"
+        ],
+        "per_file_cluster_counts": [
+          12
+        ],
+        "distinct_configurations": 12
+      },
+      "X2 control (1 model)": {
+        "files": [
+          "x2/x2_control_qwen2_5_32b.jsonl"
+        ],
+        "per_file_cluster_counts": [
+          7
+        ],
+        "distinct_configurations": 7
+      },
+      "X4 control (36-config grid, 2 models)": {
+        "files": [
+          "x4/x4_control_gpt_4_1.jsonl",
+          "x4/x4_control_gpt_4o.jsonl"
+        ],
+        "per_file_cluster_counts": [
+          28,
+          33
+        ],
+        "distinct_configurations": 35
+      }
+    },
+    "distinct_configurations_total": 87
+  }
+}

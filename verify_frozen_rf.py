@@ -86,7 +86,13 @@ def main() -> int:
     prov = {
         "estimator": "RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)",
         "fit_on": "full P1 feature matrix (no holdout), matching paper_a_classifier.py:488-489",
-        "p1_corpus_path": str(pac.P1_JSONL),
+        # Portable hint plus digest instead of the generating machine's absolute path.
+        # The absolute path leaked the local filesystem layout into a published artifact,
+        # tripped the fail-closed absolute-path guard in scripts/prepare_public_release.py,
+        # and is unusable by a consumer, who resolves this corpus via P1_JSONL_PATH. The
+        # digest is what actually pins the input.
+        "p1_corpus_path": "$P1_JSONL_PATH (external; see Reproducibility)",
+        "p1_corpus_filename": pac.P1_JSONL.name,
         "p1_corpus_sha256": _sha256(pac.P1_JSONL) if pac.P1_JSONL.exists() else None,
         "p1_rows_loaded": len(records),
         "feature_names_ordered": feature_names,

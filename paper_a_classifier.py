@@ -543,8 +543,8 @@ def main():
     print(f"  AUC:       {best['auc']:.4f} [{best['auc_ci'][0]:.4f}, {best['auc_ci'][1]:.4f}]")
     print(f"  Recall:    {best['recall']:.4f}  (FN={best['fn']} undetected poisoned sessions)")
     print(f"  Precision: {best['precision']:.4f}")
-    print(f"  Evasion boundary: prompt-inline attack produces recall=0.35 → classified as CLEAN")
-    print(f"  Cross-model: same classifier generalises across all model families tested")
+    print(f"  Evasion boundary: prompt-inline attack produces recall=0.35 (7/20 caught; 13/20 evade because recall_count=0)")
+    print(f"  Cross-model: classifier transfers without retraining to 6/9 open-weight models (AUC=1.000); 3 exceptions are mechanistically explained, not incidental")
     print(f"  Model-agnostic: GPT-4.1 trajectory (probe2) matches GPT-4o pattern")
 
 

@@ -123,16 +123,37 @@ def t2b_mannwhitney(rf, treatment, control):
     print("T2b  V3-1 H3 -- Mann-Whitney U: frozen-RF score, treatment vs control successes")
     print("="*72)
     treat_scores, ctrl_scores = [], []
+    treat_rbs = []
     for model, rows in treatment.items():
         succ = [r for r in rows if r.get("attack_success")]
         if succ:
             treat_scores.extend(score_seq(rf, succ).tolist())
+            treat_rbs.extend(r.get("recall_before_send") for r in succ)
     for model, rows in control.items():
         succ = [r for r in rows if r.get("attack_success")]
         if succ:
             ctrl_scores.extend(score_seq(rf, succ).tolist())
     treat_scores, ctrl_scores = np.array(treat_scores), np.array(ctrl_scores)
+    # Subgroup means by rbs, persisted from the third self-audit pass onward. The paper
+    # previously quoted 0.12 and 1.000 for these two cells, which are inconsistent with
+    # the pooled mean this function has always emitted ((28*0.12 + 12*1.0)/40 = 0.384,
+    # not 0.491). Emitting them here makes the decomposition artifact-backed so prose and
+    # JSON cannot drift again.
+    sub = {}
+    if len(treat_rbs) == len(treat_scores):
+        rbs = np.array([-1 if v is None else int(v) for v in treat_rbs])
+        for v in (0, 1):
+            m = rbs == v
+            if m.any():
+                sub[f"treatment_rbs{v}"] = {
+                    "n": int(m.sum()),
+                    "mean_score": float(treat_scores[m].mean()),
+                    "median_score": float(np.median(treat_scores[m])),
+                    "n_detected_at_0.5": int((treat_scores[m] >= 0.5).sum()),
+                }
     print(f"  treatment successes: N={len(treat_scores)}  mean_score={treat_scores.mean():.3f}  median={np.median(treat_scores):.3f}  IQR=[{np.percentile(treat_scores,25):.3f},{np.percentile(treat_scores,75):.3f}]")
+    for k, v in sub.items():
+        print(f"    {k}: N={v['n']}  mean_score={v['mean_score']:.3f}  detected={v['n_detected_at_0.5']}/{v['n']}")
     print(f"  control   successes: N={len(ctrl_scores)}  mean_score={ctrl_scores.mean():.3f}  median={np.median(ctrl_scores):.3f}  IQR=[{np.percentile(ctrl_scores,25):.3f},{np.percentile(ctrl_scores,75):.3f}]")
     if len(treat_scores) and len(ctrl_scores):
         u, p = mannwhitneyu(treat_scores, ctrl_scores, alternative="less")  # H3: treatment < control
@@ -141,6 +162,7 @@ def t2b_mannwhitney(rf, treatment, control):
         return {"treatment_n": len(treat_scores), "control_n": len(ctrl_scores),
                 "treatment_median": float(np.median(treat_scores)), "control_median": float(np.median(ctrl_scores)),
                 "treatment_mean": float(treat_scores.mean()), "control_mean": float(ctrl_scores.mean()),
+                "treatment_subgroups_by_rbs": sub,
                 "U": float(u), "p_value": float(p)}
     return {"note": "insufficient data"}
 

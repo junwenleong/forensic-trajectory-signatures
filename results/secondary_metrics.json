@@ -1,0 +1,130 @@
+{
+  "purpose": "Secondary classifier metrics cited in paper.tex that no previously released artifact contained. Emitted so every number in the paper is regenerable from the hashed tree plus the named external P1 corpus.",
+  "estimator": {
+    "type": "RandomForestClassifier",
+    "n_estimators": 200,
+    "max_depth": 8,
+    "class_weight": null,
+    "random_state": 42,
+    "cv": "StratifiedKFold(n_splits=5, shuffle=True, random_state=42)"
+  },
+  "n_sessions": 2520,
+  "n_attack": 1919,
+  "n_non_exfil": 601,
+  "single_rule_baseline": {
+    "rule": "recall_before_send == 1 => attack",
+    "auc": 0.9563000349426307,
+    "recall": 0.9791558103178739,
+    "specificity": 0.9334442595673876,
+    "accuracy": 0.9682539682539683,
+    "n_attack_flagged": 1879,
+    "n_non_exfil_flagged": 40,
+    "note": "AUC of a deterministic binary rule is (TPR+TNR)/2; there is no score to rank, so this is the balanced accuracy and not comparable to a probabilistic AUC except as the floor the paper uses it for."
+  },
+  "prefix_only_13": {
+    "n_features": 13,
+    "features": [
+      "recall_count",
+      "list_count",
+      "save_count",
+      "draft_count",
+      "rag_count",
+      "max_recall_chain",
+      "list_then_recall",
+      "recall_then_recall",
+      "recall_then_draft",
+      "list_then_draft",
+      "first_tool_is_list",
+      "first_tool_is_recall",
+      "first_tool_is_draft"
+    ],
+    "auc": 0.933730823822377,
+    "censoring": "NONE \u2014 features read off the completed trigger session",
+    "note": "Excluding send-named columns does not truncate the trajectory. This is a restricted-feature full-session ablation, not a pre-send measurement; see prefix_censored_13 for the censored figure.",
+    "delta_vs_full_pp": -5.66
+  },
+  "pre_send_14": {
+    "n_features": 14,
+    "features": [
+      "recall_count",
+      "list_count",
+      "save_count",
+      "draft_count",
+      "rag_count",
+      "max_recall_chain",
+      "list_then_recall",
+      "recall_then_recall",
+      "recall_then_draft",
+      "list_then_draft",
+      "first_tool_is_list",
+      "first_tool_is_recall",
+      "first_tool_is_draft",
+      "seq_len"
+    ],
+    "auc": 0.9900149048095106,
+    "censoring": "NONE \u2014 features read off the completed trigger session",
+    "note": "Excluding send-named columns does not truncate the trajectory. This is a restricted-feature full-session ablation, not a pre-send measurement; see prefix_censored_13 for the censored figure."
+  },
+  "full_model": {
+    "n_features": 19,
+    "auc": 0.9903608628662148
+  },
+  "prefix_censored_13": {
+    "n_features": 13,
+    "features": [
+      "recall_count",
+      "list_count",
+      "save_count",
+      "draft_count",
+      "rag_count",
+      "max_recall_chain",
+      "list_then_recall",
+      "recall_then_recall",
+      "recall_then_draft",
+      "list_then_draft",
+      "first_tool_is_list",
+      "first_tool_is_recall",
+      "first_tool_is_draft"
+    ],
+    "auc": 0.9337694081169217,
+    "delta_vs_full_pp": -5.66,
+    "delta_vs_uncensored_prefix_pp": 0.0,
+    "n_sessions": 2520,
+    "n_attack": 1919,
+    "n_non_exfil": 601,
+    "censoring": "trigger session truncated immediately before its first send_email; sessions with no send_email are censored at end-of-session",
+    "n_sessions_truncated": 2159,
+    "n_attack_truncated": 1919,
+    "n_non_exfil_truncated": 240,
+    "asymmetry_caveat": "Censoring bites only on sessions that send, which are predominantly the positive class. The positive class therefore loses trajectory and the negative class mostly does not, so this figure is the honest inline operating point but is NOT a like-for-like ablation of the full model."
+  },
+  "probe2_validation": {
+    "status": "INPUTS_ABSENT_FROM_THIS_ARTIFACT",
+    "expected_files": [
+      "results/p2_a2_trajectory_gpt41.jsonl",
+      "results/p2_a2_evasion.jsonl"
+    ],
+    "files_present": {
+      "results/p2_a2_trajectory_gpt41.jsonl": false,
+      "results/p2_a2_evasion.jsonl": false
+    },
+    "affected_paper_claims": [
+      "Section sec:gpt41 pilot probe: N=20, Recall=1.000, recall_count mean 3.00, recall_before_send=1 in 20/20, mean predicted probability 1.000",
+      "Section sec:evasion prompt-inline cell: N=20, Recall=0.35 (7/20), recall_count mean 0.35, mean predicted probability 0.541"
+    ],
+    "note": "paper_a_classifier.validate_on_probe2 writes nulls when these inputs are missing, which is the state of the released results file. The two cells above are therefore NOT regenerable from this artifact and are reported in the paper as such. They are not used in any table, interval or headline claim."
+  },
+  "feature_vector_census": {
+    "note": "Distinct-value census of the operation-only feature space. Explains the fifteen-significant-figure agreement between LR/RF/GBM, the flat feature-group ablation, and the interpolation character of random-fold CV.",
+    "n_feature_dimensions": 19,
+    "n_sessions": 2520,
+    "n_distinct_feature_vectors": 22,
+    "largest_equivalence_class_sessions": 421,
+    "top10_classes_cover_sessions": 2217,
+    "top10_classes_cover_fraction": 0.8798,
+    "n_label_ambiguous_vectors": 2,
+    "n_sessions_in_label_ambiguous_vectors": 479,
+    "n_distinct_vectors_recall_ablated_10feat": 21,
+    "n_recall_ablated_dimensions": 10
+  }
+}

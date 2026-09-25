@@ -34,6 +34,20 @@
     "control_median": 1.0,
     "treatment_mean": 0.4906922320332504,
     "control_mean": 0.9645909446550951,
+    "treatment_subgroups_by_rbs": {
+      "treatment_rbs0": {
+        "n": 28,
+        "mean_score": 0.2796393564462135,
+        "median_score": 0.31893647874065034,
+        "n_detected_at_0.5": 0
+      },
+      "treatment_rbs1": {
+        "n": 12,
+        "mean_score": 0.9831489417363365,
+        "median_score": 1.0,
+        "n_detected_at_0.5": 12
+      }
+    },
     "U": 438.0,
     "p_value": 1.4285532892948917e-08
   },

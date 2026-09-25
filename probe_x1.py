@@ -527,7 +527,12 @@ def run(family, arm, model, n_target=TARGET_SUCC, nopoison=False):
     provenance.register_prompt(SYSTEM, label="system")
     runner = run_minja if family == "minja" else run_zombie
     grid = x_grid.GRIDS[family]()
-    tag = "nopoison" if nopoison else arm
+    # Filename includes the arm even under --nopoison: the observable and implicit arms
+    # otherwise collapse to the identical "..._nopoison_..." file and silently append into
+    # the same JSONL when both are run without --arm (as run_pipeline.sh's nopoison stage
+    # does). Existing pre-fix files (e.g. x1_minja_nopoison_gpt_4_1.jsonl) are left in place
+    # and still readable by score_xprogram.py's glob; this only changes future output paths.
+    tag = f"{arm}_nopoison" if nopoison else arm
     slug = model.replace(".", "_").replace("-", "_")
     outfile = RES / f"x1_{family}_{tag}_{slug}.jsonl"
     existing = [json.loads(l) for l in open(outfile)] if outfile.exists() else []
@@ -543,7 +548,11 @@ def run(family, arm, model, n_target=TARGET_SUCC, nopoison=False):
                       and r.get("scenario_id")}
     # end-of-block stopping: nopoison/observable use a fixed >=1-block target; implicit uses n_target
     target = n_target
-    seed = 1000 + (hash((family, arm, model, "v3")) % 9999)
+    # Deterministic seed (see probe_v3_1.py): built-in hash() is PYTHONHASHSEED-salted
+    # and non-reproducible across processes; blake2b is stable.
+    import hashlib
+    _cell_key = f"{family}|{arm}|{model}|v3".encode("utf-8")
+    seed = 1000 + int.from_bytes(hashlib.blake2b(_cell_key, digest_size=8).digest(), "big") % 9999
     print(f"  {family}/{tag}/{model}: resuming from {done} trials, {succ_deliv} eligible, "
           f"{len(prior_clusters)} effective clusters contributing "
           f"(need >={TARGET_CLUSTERS})")

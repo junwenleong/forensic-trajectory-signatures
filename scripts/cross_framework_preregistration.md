@@ -1,6 +1,22 @@
 # Cross-Framework Replication: Trajectory Signature Transfer
 ## Preregistration (to be committed before data collection)
 
+> **STATUS: SUPERSEDED, not executed as written (annotated 2026-09-24).** This document
+> is retained as a historical record. The study it registers (genuine LangChain
+> AgentExecutor plus OpenAI Assistants on gpt-4.1-mini, N=750) was **not** the study
+> that ran. What ran was a cross-*framing* comparison of two prompt variants inside a
+> single raw OpenAI function-calling loop, on GPT-5.x and Gemini 2.5, and it is reported
+> as EXPLORATORY in the paper for exactly that reason. The genuine-framework
+> replication this document intended was carried out later and separately as **V3-4**
+> (LangGraph `create_react_agent` observable arm, LangChain FAISS retriever implicit
+> arm), under its own preregistration. Do not read this file as an active or discharged
+> preregistration for either study.
+>
+> **Also corrected:** this document says the frozen classifier has "16 features" in two
+> places (Design, and the per-feature transfer analysis). The classifier has **19**
+> features, as recorded in `results/frozen_rf_verification.json` and every other
+> document in the artifact. The "16" is an error in this file, not a different model.
+
 **Date:** 2026-08-16
 **Paper:** Trajectory Signatures (arXiv:2606.30566)
 **Motivation:** Panel critique that the trajectory classifier is validated on only one
@@ -84,7 +100,7 @@ Designed to trigger the same recall_before_send signature as the attack:
 - Attack execution rate per framework (does the DTA work on each scaffold?)
 - Unconditional detection rate (all attack attempts, not just successful ones)
 - Benign no-memory FPR (should be ~0% — negative control)
-- Per-feature transfer (which of the 16 features behave consistently?)
+- Per-feature transfer (which of the 19 features behave consistently?)
 
 ### Exclusion Criteria
 
@@ -122,7 +138,7 @@ Cap gross attempts at 300/framework; if target not reached, report missingness.
 
 ### Classifier Freeze
 
-The exact classifier from Paper 1 (random forest, 16 features, trained on P1
+The exact classifier from Paper 1 (random forest, 19 features, trained on P1
 factorial data) is applied without retraining. The feature extraction code maps
 each framework's tool-call log to the canonical 16-feature vector via a
 framework-specific adapter.

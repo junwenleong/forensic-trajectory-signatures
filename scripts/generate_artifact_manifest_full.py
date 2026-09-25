@@ -21,6 +21,10 @@ CATEGORIES = {
                # even though the v5 headline claims rest on them)
                "X1_PREREG.md", "X2_PREREG.md", "X3_NOTE.md", "X4_PREREG.md",
                "X5_ADAPTIVE_PREREG.md", "X6_BREADTH_PREREG.md", "BPLUS_PREREG.md",
+               # V3-6/V3-6b (added -- were omitted from every prior generator revision
+               # even though the committed artifact_manifest.json has always included
+               # them, so running this generator could not reproduce the shipped manifest)
+               "V3_6_PREREG.md", "V3_6B_PREREG.md",
                # v1.3 instrumentation amendment (GPG-signed BEFORE the 2026-09-19
                # B+ re-collection; see results/bplus/legacy_2026-09-11/ for the
                # superseded records it supersedes)
@@ -50,7 +54,23 @@ CATEGORIES = {
                 # reproduce the corrections that define the revision.
                 "x1_cluster_bounds.py", "x4_cluster_bounds.py",
                 "recompute_recall_ci.py", "bca_jackknife_sensitivity.py",
-                "run_pipeline.sh", "run_macstudio_queue.sh"],
+                # Secondary metrics that the paper cited with no producing script in the
+                # hashed tree (single-rule baseline; the 13- and 14-feature pre-send
+                # variants), plus an explicit record of the absent probe2 inputs.
+                "emit_secondary_metrics.py",
+                # Third self-audit pass: the two scripts that produce the corrections
+                # defining this pass. Without them the hashed tree cannot reproduce the
+                # measured provenance coverage or the uniform zero-event bounds.
+                "emit_provenance_coverage.py", "necessity_cluster_bounds.py",
+                "run_pipeline.sh", "run_macstudio_queue.sh",
+                # V3-6/V3-6b probes+scorers and the changelog extractor (added -- same
+                # omission as the preregs above: present in the committed manifest since
+                # V3-6 shipped, never in this generator's list). conformance.py and
+                # check_conformance.py are NOT listed here -- they belong exclusively
+                # under the dedicated "conformance" category below, matching the
+                # committed manifest.
+                "probe_v3_6.py", "score_v3_6.py", "probe_v3_6b.py", "score_v3_6b.py",
+                "extract_changelog.py"],
     "scenario_grids": ["v3_1_scenario_grid.json", "MECHANISM_MANIFEST.json"],
     "paper": ["paper.tex", "math_commands.tex", "references.bib"],
     "figures": ["figures/roc_curve.pdf", "figures/ablation.pdf",
@@ -68,10 +88,26 @@ CATEGORIES = {
                          # describing E3 as a frozen-RF false-positive rate
                          "results/frozen_rf.joblib",
                          "results/frozen_rf_verification.json",
+                         # emitted by emit_secondary_metrics.py
+                         "results/secondary_metrics.json",
+                         # third self-audit pass: measured git-provenance coverage
+                         # replacing the false global claim, and the one-rule
+                         # recomputation of every zero-event necessity cell
+                         "results/provenance_coverage.json",
+                         "results/necessity_cluster_bounds.json",
                          "results/RESULTS_DIGEST.md"],
+    "correction_record": ["CHANGELOG.md"],
+    "conformance": ["conformance.py", "check_conformance.py"],
 }
 
 # Raw-trial result directories walked recursively (hash every JSONL/JSON found).
+# v3_6/v3_6b used to be built through a dedicated bare-filename loop (removed
+# 2026-09-25) whose keys omitted their directory component, so every consumer that
+# resolves ROOT / key -- prepare_public_release.py included -- looked for them at
+# the repo root instead of under results/v3_6/ or results/v3_6b/ and silently
+# skipped them. Routing them through RESULT_DIRS gives them the same full-relative-
+# path keys as every other raw-trial directory, with no special-case code left to
+# drift out of sync again.
 RESULT_DIRS = [
     "results/v3_1", "results/v3_2", "results/cross_framework",
     "results/prospective_eval", "results/v3_3", "results/v3_4",
@@ -84,6 +120,8 @@ RESULT_DIRS = [
     "results/x1_v2_pilot", "results/x4_v2_pilot", "results/x4_detbug_v1",
     "results/x5_buggy_v1", "results/x6_buggy_v1",
     "results/v3_2_k2", "results/v3_2_k8",
+    # V3-6 / V3-6b (added 2026-09-25, folded in from the removed bare-filename loop)
+    "results/v3_6", "results/v3_6b",
 ]
 
 def sha(p: Path) -> str:
@@ -101,18 +139,28 @@ def add(d, rel):
 
 manifest = {
     "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-    "manifest_version": "2026-09-24-v7-selfaudit-corrections",
+    "manifest_version": "2026-09-25-v10-unify-v36-result-dirs",
     "purpose": ("Complete content-hash manifest for FTS (paper_a). Hashes every paper_a "
                 "script, result file, figure and preregistration, and names (without "
                 "vendoring) the two external inputs: the P1 factorial JSONL that trains "
                 "the classifier and the V2-1 benign corpus that drives the deployment-FPR "
                 "and PPV analyses; see external_dependencies below for their recorded "
-                "digests. v7 adds the four self-audit correction scripts "
-                "(x1_cluster_bounds.py, x4_cluster_bounds.py, recompute_recall_ci.py, "
-                "bca_jackknife_sensitivity.py) and the cluster-unit bound artifacts they "
-                "emit; the v6 manifest omitted all of them, so the hashed tree could not "
-                "regenerate the interval restatements that define the current revision. "
-                "v6 had itself added the X-program and B+ artifacts omitted by v4/v5."),
+                "digests. v9 fixes a generator/manifest parity gap: V3_6_PREREG.md, "
+                "V3_6B_PREREG.md, probe_v3_6(.py|b.py), score_v3_6(.py|b.py), "
+                "conformance.py, check_conformance.py, extract_changelog.py, and the "
+                "correction_record/conformance/results_v3_6/results_v3_6b categories were "
+                "present in every committed manifest since V3-6 shipped but absent from "
+                "every prior revision of this generator, so running it could not "
+                "reproduce the manifest it claims to regenerate. v7 had added the four "
+                "self-audit correction scripts and emit_secondary_metrics.py; v6 had "
+                "added the X-program and B+ artifacts omitted by v4/v5. v10 folds the "
+                "results_v3_6/results_v3_6b categories into RESULT_DIRS (renamed "
+                "data_v3_6/data_v3_6b) so their keys are full relative paths like every "
+                "other raw-trial directory: v9 put the files in the manifest but kept "
+                "their old bare-filename keys, which is why prepare_public_release.py "
+                "still could not locate them under results/v3_6/ or results/v3_6b/ and "
+                "skipped all eight as absent. No other reader of this manifest depended "
+                "on the bare-name keys (checked before this change)."),
     "artifacts": {},
     "summary": {},
 }
@@ -121,9 +169,23 @@ total_bytes = 0
 counts = {}
 for cat, files in CATEGORIES.items():
     manifest["artifacts"][cat] = {}
-    for rel in files:
-        total_bytes += add(manifest["artifacts"][cat], rel)
-    counts[cat] = len(files)
+    if isinstance(files, dict):
+        # results_v3_6 / results_v3_6b: key is a bare filename (matching the committed
+        # manifest's convention for this category), value is the actual repo-relative
+        # path used to locate and hash the file.
+        for key, relpath in files.items():
+            p = ROOT / relpath
+            if not p.exists():
+                manifest["artifacts"][cat][key] = {"MISSING": True}
+            else:
+                sz = p.stat().st_size
+                manifest["artifacts"][cat][key] = {"sha256": sha(p), "size_bytes": sz}
+                total_bytes += sz
+        counts[cat] = len(files)
+    else:
+        for rel in files:
+            total_bytes += add(manifest["artifacts"][cat], rel)
+        counts[cat] = len(files)
 
 # Enumerate all result data dirs dynamically (V3, cross_framework, prospective_eval,
 # and -- added 2026-09-19 -- the full X-program and B+ raw-trial trees)
@@ -169,7 +231,12 @@ EXTERNAL = {
         "role": "classifier training corpus (2,520 DTA runs)",
         "released_in": "companion repository stateful-agent-security-eval",
         "local_path_env": "P1_JSONL_PATH",
-        "path": os.environ.get(
+        # Portable hint only. The absolute resolution path is used to compute the digest
+        # but is NOT written to the manifest: earlier revisions published the generating
+        # machine's home-directory path, which leaks a local filesystem layout into a
+        # public artifact and is useless to anyone else. Consumers set the env var above.
+        "path_hint": "$P1_JSONL_PATH, default ~/projects/agentic/results/defense_factorial/results.jsonl",
+        "_resolve": os.environ.get(
             "P1_JSONL_PATH",
             str(Path.home() / "projects/agentic/results/defense_factorial/results.jsonl")),
     },
@@ -177,13 +244,14 @@ EXTERNAL = {
         "role": "benign deployment-FPR and PPV analyses",
         "released_in": "companion program, paper_1_behavioral/results/",
         "local_path_env": "V2_1_RESULTS_DIR",
-        "path": os.environ.get(
+        "path_hint": "$V2_1_RESULTS_DIR, default <repo>/paper_1_behavioral/results",
+        "_resolve": os.environ.get(
             "V2_1_RESULTS_DIR",
             str(ROOT.parent / "paper_1_behavioral" / "results")),
     },
 }
 for name, spec in EXTERNAL.items():
-    p = Path(spec["path"])
+    p = Path(spec.pop("_resolve"))
     if p.is_file():
         spec["sha256"] = sha(p)
         spec["size_bytes"] = p.stat().st_size

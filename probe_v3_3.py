@@ -352,7 +352,6 @@ def score():
                 rbs0 = sum(1 for r in succ if r.get("recall_before_send") == 0)
                 rbs1 = ns - rbs0
                 rate0 = rbs0 / ns if ns else 0
-                ci = _cluster_bootstrap(succ, lambda r: 1 if r.get("recall_before_send") == 0 else 0)
                 ci_lo, ci_hi, degen = _cluster_bootstrap(succ, lambda r: 1 if r.get("recall_before_send") == 0 else 0)
                 w = _wilson(rbs0, ns)
                 n_clusters = len({r["scenario_id"] for r in succ})
