@@ -1,6 +1,6 @@
 # Forensic Trajectory Signatures (FTS)
 
-Artifact repository for the paper *Retrieval Observability Bounds on Provenance
+Artefact repository for the paper *Retrieval Observability Bounds on Provenance
 Detection for Agent Memory Poisoning: Measured Coverage and a Falsified
 Standalone Detector* (arXiv:2606.30566). Corresponds to arXiv v3; see the paper
 for the formal version history.
@@ -26,7 +26,7 @@ results were produced under Ollama with fixed seeds.
   micro-benchmark, both reading the V2-1 benign corpus in `results/v2_1_benign/`.
 - `validate_all.py`, `conformance.py`, `check_conformance.py`: fail-closed
   completeness and conformance checks run before any confirmatory collection.
-- `leave_one_family_out.py`: leave-one-defense-family-out generalization analysis.
+- `leave_one_family_out.py`: leave-one-defence-family-out generalisation analysis.
 - `reanalysis_implicit_bypass.py`, `reanalysis_confounders.py`: re-analyses of
   existing data behind the write-observability subsection.
 - `scripts/`: cross-framework, cross-harness, prospective-eval and PPV-table experiments.
@@ -49,7 +49,7 @@ Model identifiers in the code and data use bare names (e.g. `claude-sonnet-4-6`,
 `run_macstudio_queue.sh` reaches a remote Ollama host over SSH and reads the
 target from `OLLAMA_SSH_TARGET=user@host`.
 
-The classifier training data (the P1 defense factorial) is the one input not
+The classifier training data (the P1 defence factorial) is the one input not
 vendored here. It is archived in the companion repository
 https://github.com/junwenleong/stateful-agent-security-eval
 (`results/defense_factorial/results.jsonl`); point `P1_JSONL_PATH` at it.

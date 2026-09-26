@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-26T07:07:44Z",
+  "generated_utc": "2026-09-26T08:08:11Z",
   "manifest_version": "public-release-2026-09-26",
   "purpose": "Public content-hash manifest for the FTS artifact. Records, per file, both the digest of the PUBLISHED bytes and the digest of the INTERNAL original, plus a 'scrubbed' flag. Data files carrying institutional infrastructure identifiers (API hostname, gateway routing prefixes on model ids) are emptied/stripped before release, so those files differ byte-wise from the internal originals by design; every scientific field -- conditions, outcomes, counts, scenario ids -- is untouched. Scripts, preregistrations and scored summaries are byte-identical unless flagged.",
   "scrub_policy": {
@@ -207,10 +207,10 @@
       "size_bytes": 20822
     },
     "figures/defense_stratified.pdf": {
-      "sha256_published": "b032d61c2a5a15740911ae85a3d475d2319fa34d036bdf0f8a294c785c07c7c3",
-      "sha256_internal": "b032d61c2a5a15740911ae85a3d475d2319fa34d036bdf0f8a294c785c07c7c3",
+      "sha256_published": "02f9766d9498d7991a8e92ede823f196e58b846b619d8171cb6b3532b906782c",
+      "sha256_internal": "02f9766d9498d7991a8e92ede823f196e58b846b619d8171cb6b3532b906782c",
       "scrubbed": false,
-      "size_bytes": 18941
+      "size_bytes": 18746
     },
     "figures/feature_importance.pdf": {
       "sha256_published": "a47410603ca7f85baa4e6f2a2612bf7e0f115e75eb97458ce8fc57c6df291be2",
@@ -273,16 +273,16 @@
       "size_bytes": 7531
     },
     "paper.pdf": {
-      "sha256_published": "018401fc77b04bed3953926e6b862034ab0b606e41a66dd5712c73956dad9484",
-      "sha256_internal": "018401fc77b04bed3953926e6b862034ab0b606e41a66dd5712c73956dad9484",
+      "sha256_published": "10574ae0df740705d26df55ec8d21eaeb426a5ff90074648e3d80d2c9ea4b212",
+      "sha256_internal": "10574ae0df740705d26df55ec8d21eaeb426a5ff90074648e3d80d2c9ea4b212",
       "scrubbed": false,
-      "size_bytes": 694094
+      "size_bytes": 693903
     },
     "paper.tex": {
-      "sha256_published": "312c1bb5c9c50575cf8e778ef73036011f09267e84f35cb1ba70795272862d16",
-      "sha256_internal": "312c1bb5c9c50575cf8e778ef73036011f09267e84f35cb1ba70795272862d16",
+      "sha256_published": "4a97658f92d53afa2d4052880340193dc5f6059f3082adb9b5f96dcfa9a47720",
+      "sha256_internal": "4a97658f92d53afa2d4052880340193dc5f6059f3082adb9b5f96dcfa9a47720",
       "scrubbed": false,
-      "size_bytes": 353811
+      "size_bytes": 353863
     },
     "paper_a_classifier.py": {
       "sha256_published": "bef70019033d13f90efa56308f0d076ffda506c650347b71b0e7e6d2d6268ffc",
@@ -291,8 +291,8 @@
       "size_bytes": 27085
     },
     "paper_a_figures.py": {
-      "sha256_published": "7e945beacc5e91f5874fa3e69b56443daa69300820eade56ee5c6d673a2876ea",
-      "sha256_internal": "7e945beacc5e91f5874fa3e69b56443daa69300820eade56ee5c6d673a2876ea",
+      "sha256_published": "0e38f5d8cacc7053fd0f33a3bc1c2113e1db2cf5e9fa8913473dfa8702bc0290",
+      "sha256_internal": "0e38f5d8cacc7053fd0f33a3bc1c2113e1db2cf5e9fa8913473dfa8702bc0290",
       "scrubbed": false,
       "size_bytes": 19554
     },
