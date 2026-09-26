@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-26T08:15:31Z",
+  "generated_utc": "2026-09-26T08:27:03Z",
   "manifest_version": "public-release-2026-09-26",
   "purpose": "Public content-hash manifest for the FTS artifact. Records, per file, both the digest of the PUBLISHED bytes and the digest of the INTERNAL original, plus a 'scrubbed' flag. Data files carrying institutional infrastructure identifiers (API hostname, gateway routing prefixes on model ids) are emptied/stripped before release, so those files differ byte-wise from the internal originals by design; every scientific field -- conditions, outcomes, counts, scenario ids -- is untouched. Scripts, preregistrations and scored summaries are byte-identical unless flagged.",
   "scrub_policy": {
@@ -27,10 +27,10 @@
       "size_bytes": 8279
     },
     "CHANGELOG.md": {
-      "sha256_published": "91b2f18be34aae564cc0473f4f53c776f003ec1c56f9ca0f544ea229a2c9b330",
-      "sha256_internal": "91b2f18be34aae564cc0473f4f53c776f003ec1c56f9ca0f544ea229a2c9b330",
+      "sha256_published": "9883f67adc9664cb21548229eae1722776d6c3b9406b4efb854229a2fc983a8a",
+      "sha256_internal": "9883f67adc9664cb21548229eae1722776d6c3b9406b4efb854229a2fc983a8a",
       "scrubbed": false,
-      "size_bytes": 68546
+      "size_bytes": 69415
     },
     "DEPLOYMENT_IMPLICATIONS.md": {
       "sha256_published": "2c3f32b1590b746262f8339e67c0296260441e0fc5c68e5dc290f2251035a259",

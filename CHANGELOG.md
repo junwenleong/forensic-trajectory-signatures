@@ -293,3 +293,15 @@ looking for anchor text that no longer exists) and is kept for provenance of the
 original extraction rather than as a working regeneration tool. New entries are
 appended directly to this file going forward.
 
+## arXiv v3 submitted (2026-09-26)
+
+v3 was submitted to arXiv on 2026-09-26. It carries every change recorded above that
+postdates arXiv v2 (2026-07-21); the local drafts labelled v3 to v8 in earlier entries were
+internal iterations and were never posted separately. Final presentation-only changes made
+immediately before submission, none of which alters a number or an evidence status:
+British English spelling throughout; em dashes removed from text and figure titles;
+title typeset without hyphenation; short page-1 version note written against v2;
+draft-history wording normalised ("earlier drafts"); internal directory names removed;
+link styling and PDF metadata; definition cross-references via labels. The V2-1 benign
+corpus, previously described as released but held only in a private repository, is now
+included in the artefact under `results/v2_1_benign/`.
