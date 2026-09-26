@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-26T07:04:13Z",
+  "generated_utc": "2026-09-26T07:07:44Z",
   "manifest_version": "public-release-2026-09-26",
   "purpose": "Public content-hash manifest for the FTS artifact. Records, per file, both the digest of the PUBLISHED bytes and the digest of the INTERNAL original, plus a 'scrubbed' flag. Data files carrying institutional infrastructure identifiers (API hostname, gateway routing prefixes on model ids) are emptied/stripped before release, so those files differ byte-wise from the internal originals by design; every scientific field -- conditions, outcomes, counts, scenario ids -- is untouched. Scripts, preregistrations and scored summaries are byte-identical unless flagged.",
   "scrub_policy": {
@@ -273,14 +273,14 @@
       "size_bytes": 7531
     },
     "paper.pdf": {
-      "sha256_published": "f6a17da354271ee350349f7ab8f4a7b0fca0bd0b6e86079aaff74ba121186402",
-      "sha256_internal": "f6a17da354271ee350349f7ab8f4a7b0fca0bd0b6e86079aaff74ba121186402",
+      "sha256_published": "018401fc77b04bed3953926e6b862034ab0b606e41a66dd5712c73956dad9484",
+      "sha256_internal": "018401fc77b04bed3953926e6b862034ab0b606e41a66dd5712c73956dad9484",
       "scrubbed": false,
       "size_bytes": 694094
     },
     "paper.tex": {
-      "sha256_published": "8cad003be5ad95a6d3be5d295f4571c7d524c4f5bf0d3d1409d06ac060116ce1",
-      "sha256_internal": "8cad003be5ad95a6d3be5d295f4571c7d524c4f5bf0d3d1409d06ac060116ce1",
+      "sha256_published": "312c1bb5c9c50575cf8e778ef73036011f09267e84f35cb1ba70795272862d16",
+      "sha256_internal": "312c1bb5c9c50575cf8e778ef73036011f09267e84f35cb1ba70795272862d16",
       "scrubbed": false,
       "size_bytes": 353811
     },
@@ -669,10 +669,10 @@
       "size_bytes": 225621
     },
     "results/provenance_coverage.json": {
-      "sha256_published": "c22ffa74eb6a5c2b798be98018df6f2c8a7502d5696effbdab75f7e8bb95cd2e",
+      "sha256_published": "24df4648b539454543dfde78f030f77a6d688c0b01af8e8f60928c4c4d4016a9",
       "sha256_internal": "c22ffa74eb6a5c2b798be98018df6f2c8a7502d5696effbdab75f7e8bb95cd2e",
-      "scrubbed": false,
-      "size_bytes": 81363
+      "scrubbed": true,
+      "size_bytes": 81311
     },
     "results/reanalysis_prereg_completion.json": {
       "sha256_published": "7fbbdcb0a9577b24bf6cba359a8572dc80d2dd0ad1450e7f8477e65a04647429",
@@ -1269,52 +1269,52 @@
       "size_bytes": 151519
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k0_mandatory.jsonl": {
-      "sha256_published": "cf897c2b4a1c1551e5006a39ea186adc29d9ce467b64d7e55617e42639729683",
+      "sha256_published": "207a67e53b617ad8422f73f6a8875a01b4968d145c622b99fc019cd0bb5a0cbb",
       "sha256_internal": "163fc6deb7bbcfceb0ae0784f864e63fc2d336f452278955f023620838e8667c",
       "scrubbed": true,
-      "size_bytes": 92769
+      "size_bytes": 92609
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k0_optional.jsonl": {
-      "sha256_published": "9544491dd95fc1b1c13bb874c80c7c5cdfd1d497b8996d43122cde2757b4d957",
+      "sha256_published": "5f56004e33074a005eababcea229f6f1d77fcc1a79e11386be0d3affa760fb12",
       "sha256_internal": "1770d77138cccba6bcbb7e6d0de99707f3906af48ac899f1d2c12b502759be6b",
       "scrubbed": true,
-      "size_bytes": 85729
+      "size_bytes": 85569
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k1_mandatory.jsonl": {
-      "sha256_published": "f057e952d44f25da258787b809fb2e9af98501a01c339b862c3337784cc93519",
+      "sha256_published": "50a3053675f0fa30a5d97662eeb179aa84ece7ab4c65152fab4e7f6d564b7c2b",
       "sha256_internal": "78f7487e56698caa2ba08e378002173eefd7f8412fed9c6460ddb7bcd3f1cdbf",
       "scrubbed": true,
-      "size_bytes": 90754
+      "size_bytes": 90594
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k1_optional.jsonl": {
-      "sha256_published": "bc553486add664cf1c396b21d09bdfff713811f52808308b00ac579ce5f918de",
+      "sha256_published": "ef0710710137a8ee81c6492af5b76f00c68d622d4c825b30251be979f4fdd1d6",
       "sha256_internal": "a555217a1ac75c9b6d9652ac6cf23ab5566481bb44732572cb9137b5b0111dcc",
       "scrubbed": true,
-      "size_bytes": 101232
+      "size_bytes": 101072
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k3_mandatory.jsonl": {
-      "sha256_published": "ede1144d6cfc379a6610d6fc6b8dd02f4a0653161b0fd0a634726437be15ff6a",
+      "sha256_published": "b50a8960df2acc6727374504c99285cca5e26b378964b175f7e8ef3a60f36005",
       "sha256_internal": "1f9f28aa705e4d5c81d57312897720e008d9126ae3138794eedfffb5cdf4ed22",
       "scrubbed": true,
-      "size_bytes": 97014
+      "size_bytes": 96854
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k3_optional.jsonl": {
-      "sha256_published": "96568bd261c28c4a5d159d80461add2b05b6b80b5725125bc653c87f29bb43fc",
+      "sha256_published": "3087723b82b4fe2c8fc5e3b777593e5ce13f3f050ad163755dbc58ff8a9474ec",
       "sha256_internal": "c7f0b5b005e2f1798a06b521bf4e7cce629d81666dc6a54eba1290399b8df9c8",
       "scrubbed": true,
-      "size_bytes": 97322
+      "size_bytes": 97162
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k5_mandatory.jsonl": {
-      "sha256_published": "5c7ba50ff4cb219b7b96954dfaa038d26f9eded56ba5ad0c62fb9a7d26c45001",
+      "sha256_published": "02ce84f5dacb904133c57e5a5a71da28685f30f01763b27b6c09a547c4b5c43f",
       "sha256_internal": "c954726b3e73701b222fe9b9b903026c12c159ae9210ba5e9748e31c3588e2d0",
       "scrubbed": true,
-      "size_bytes": 105259
+      "size_bytes": 105099
     },
     "results/v2_1_benign/v2_1_claude_sonnet_4_6_k5_optional.jsonl": {
-      "sha256_published": "6f2f2dbc8def6b11743fc3ccaa6f243fed2638db6e6963e07eeaad5c6376bb86",
+      "sha256_published": "847646cbe0c615397d4c48f744cd78d6849ec5dac04099d2f185bf6d98763640",
       "sha256_internal": "2942548c6a0a2e8626aa7ad158187addb3f9a650e61998ab283562bf2cee5f37",
       "scrubbed": true,
-      "size_bytes": 108029
+      "size_bytes": 107869
     },
     "results/v3_1/v3_1_gpt_4_1_control.jsonl": {
       "sha256_published": "df40590cac5fa66321ee778ad346ce61085e75ebd0d7a7a304f30b64a670f3b0",
@@ -2393,7 +2393,7 @@
   },
   "summary": {
     "total_files": 396,
-    "scrubbed_files": 28,
+    "scrubbed_files": 29,
     "renamed_files": 11
   }
 }
