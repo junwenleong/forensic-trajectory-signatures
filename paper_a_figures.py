@@ -268,10 +268,10 @@ def main():
                      "rag_llm_judge", "prompt_hardening", "memory_sandbox"]
     present = [d for d in defense_order if d in defense_stats]
     d_labels = {
-        "no_defense":      "No Defense",
-        "minimizer":       "Minimizer",
-        "sanitizer":       "Sanitizer",
-        "rag_sanitizer":   "RAG Sanitizer",
+        "no_defense":      "No Defence",
+        "minimizer":       "Minimiser",
+        "sanitizer":       "Sanitiser",
+        "rag_sanitizer":   "RAG Sanitiser",
         "rag_llm_judge":   "RAG LLM Judge",
         "prompt_hardening":"Prompt Hardening",
         "memory_sandbox":  "Memory Sandbox",
@@ -290,7 +290,7 @@ def main():
     ax.set_xticklabels([d_labels[d] for d in present], rotation=22, ha="right")
     ax.set_ylabel("Score")
     ax.set_ylim(0.0, 1.08)
-    ax.set_title("Detector Performance Across Defense Conditions")
+    ax.set_title("Detector Performance Across Defence Conditions")
     for bar, fn_val in zip(bars2, fns):
         if fn_val > 0:
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
