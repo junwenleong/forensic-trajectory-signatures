@@ -26,7 +26,10 @@ for k,v in sorted(d["x1"].items()):
     if k.startswith("CONTRAST"):
         p(f"  {k}: paired contrast={v.get('contrast_point')}, CI={v.get('contrast_ci')}, "
           f"shared_clusters={v.get('n_shared_clusters')}, "
-          f"eff_shared_clusters={v.get('eff_n_shared_clusters')}, eff_gate={v.get('eff_cluster_gate')}")
+          f"eff_shared_clusters_attempted={v.get('eff_n_shared_clusters')}, "
+          f"eff_shared_clusters_contributing={v.get('eff_n_shared_contributing')}, "
+          f"eff_gate={v.get('eff_cluster_gate')}  # eff_gate is decided on the "
+          f"'contributing' count, not 'attempted' (paper Sec. x1)")
     else:
         flag = ""
         if v.get("cluster_gate") and v.get("eff_cluster_gate") is False:
@@ -82,7 +85,7 @@ p()
 p("## X6 — architecture x model breadth (orp among eligible; A-summary implicit key prediction orp~0)")
 # recompute per arch x arm x model cleanly
 from collections import defaultdict
-g=defaultdict(lambda:[0,0,0])  # [n, eligible, orp]
+g=defaultdict(lambda:[0,0,0,0])  # [n, eligible, orp, non_evaluable]
 for f in glob.glob(str(HERE/"results"/"x6"/"*.jsonl")):
     parts=f.split("/")[-1][:-6].split("_")
     arch=parts[1]; arm=parts[2]; model="_".join(parts[3:])
@@ -91,12 +94,16 @@ for f in glob.glob(str(HERE/"results"/"x6"/"*.jsonl")):
         r=json.loads(l)
         if r.get("error"): continue
         key=(arch,arm,model); g[key][0]+=1
+        if r.get("attack_success") is None:
+            g[key][3]+=1  # non-evaluable: no outcome scored, regardless of call_sequence
+            continue
         if r.get("poison_delivered") and r.get("attack_success"):
             g[key][1]+=1; g[key][2]+=r.get("observable_read_of_poison",0)
 for key in sorted(g):
-    n,e,o=g[key]
+    n,e,o,ne=g[key]
     rate=f"{o/e:.3f}" if e else "n/a"
-    p(f"  {key[0]}/{key[1]}/{key[2]}: n={n}, eligible={e}, orp={o}, rate={rate}")
+    tag=f", NON-EVALUABLE={ne} (attack_success unscored/null; not a measured zero)" if ne else ""
+    p(f"  {key[0]}/{key[1]}/{key[2]}: n={n}, eligible={e}, orp={o}, rate={rate}{tag}")
 p()
 p("## B+ — benign base-rate / X1-implicit confound check (E1 = memory-tool call rate)")
 for k,v in sorted(d["bplus"].items()):

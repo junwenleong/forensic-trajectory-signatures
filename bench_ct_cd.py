@@ -18,6 +18,7 @@ hardware/model stated, superseding the asymptotic-only claim.
 """
 from __future__ import annotations
 import json
+import os
 import time
 import statistics
 from pathlib import Path
@@ -51,7 +52,7 @@ def load_sample_sequences(n=200):
     """Grab real tool-call sequences from V2-1 benign logs for C_T timing."""
     seqs = []
     import glob
-    for f in glob.glob(str(HERE.parent / "paper_1_behavioral" / "results" / "v2_1_*.jsonl")):
+    for f in glob.glob(str(Path(os.environ.get("V2_1_RESULTS_DIR", str(HERE / "results" / "v2_1_benign"))) / "v2_1_*.jsonl")):
         for l in open(f):
             if not l.strip():
                 continue
