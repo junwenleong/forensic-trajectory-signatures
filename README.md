@@ -19,7 +19,7 @@ results were produced under Ollama with fixed seeds.
 - `V*_PREREG.md`, `X*_PREREG.md`, `BPLUS_PREREG*.md`: preregistrations for every
   probe (V2-1 through V3-6b, X1-X6, B+), each GPG-signed before data collection.
 - `probe_*.py`, `score_*.py`, `x_*.py`: probe implementations and scorers for
-  every preregistered collection, including the X-program (X1-X6), B+, and the
+  every preregistered collection, including the X-programme (X1-X6), B+, and the
   V3-6/V3-6b store-versus-context replications.
 - `paper_a_classifier.py`: trajectory-signature classifier (feature extraction + training).
 - `trace_v2_1_fpr.py`, `bench_ct_cd.py`: benign deployment-FPR trace and the cost
@@ -31,9 +31,23 @@ results were produced under Ollama with fixed seeds.
   existing data behind the write-observability subsection.
 - `scripts/`: cross-framework, cross-harness, prospective-eval and PPV-table experiments.
 - `results/`: raw trial data (JSONL) for every probe, including the V2-1 benign
-  corpus (`results/v2_1_benign/`), the X-program, B+, and V3-6/V3-6b, plus
+  corpus (`results/v2_1_benign/`), the X-programme, B+, and V3-6/V3-6b, plus
   scored-summary JSON per collection.
 - `artifact_manifest.json`: SHA-256 content-hash manifest over every released file.
+
+## Installation
+
+Python 3.14. Install the pinned dependencies with
+
+```
+pip install -r requirements.txt
+```
+
+The analysis, scoring and bound-computation scripts run from this repository
+alone (verified in a fresh environment). The data-collection probes
+(`probe_*.py`, `exp_*.py`) also import the research programme's shared harness
+modules `probe3` and `provenance`, which are not part of this artefact; the raw
+trial data they produced is included under `results/`.
 
 ## Configuration
 
@@ -70,3 +84,9 @@ for rel, meta in m["files"].items():
     assert digest == meta["sha256_published"], f"mismatch: {rel}"
 print("all", len(m["files"]), "files verified;", m["summary"]["scrubbed_files"], "scrubbed")
 ```
+
+## Licence
+
+Source code: MIT (`LICENSE`). Data, figures and documentation: CC BY 4.0
+(`LICENSE-DATA`). The paper is distributed under the licence shown on its arXiv
+listing. Please cite arXiv:2606.30566.

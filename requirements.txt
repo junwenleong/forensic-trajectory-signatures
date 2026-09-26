@@ -1,0 +1,15 @@
+# Direct third-party dependencies of the released scripts, pinned to the versions
+# used for this paper (Python 3.14). Analysis and scoring scripts need only
+# numpy, scipy, scikit-learn, joblib and matplotlib; the collection probes also
+# need the API/framework packages below.
+numpy==2.4.6
+scipy==1.18.0
+scikit-learn==1.9.0
+joblib==1.5.3
+matplotlib==3.11.0
+faiss-cpu==1.15.0
+openai==2.44.0
+httpx==0.28.1
+langchain-core==0.3.86
+langchain-openai==0.3.35
+langgraph==0.6.11
