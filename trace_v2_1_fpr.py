@@ -1,7 +1,7 @@
 """
 Trace the reported unconditional benign FPR figures (24.7--57.6%) to specific
 V2-1 cells. NO new data -- scores the frozen paper-spec RF on the already-
-collected V2-1 benign corpus (paper_1_behavioral/results/v2_1_*.jsonl).
+collected V2-1 benign corpus (results/v2_1_benign/v2_1_*.jsonl).
 
 The paper reports:
   - unconditional benign FPR range 24.7--57.6%
@@ -14,6 +14,7 @@ This script computes FPR pooled / by-k / by-protocol / by-model to find it.
 from __future__ import annotations
 import json
 import glob
+import os
 from pathlib import Path
 from collections import defaultdict
 
@@ -25,7 +26,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from paper_a_classifier import extract_features, extract_features_from_sequence, P1_JSONL
 
 HERE = Path(__file__).resolve().parent
-V2_1_GLOB = str(HERE.parent / "paper_1_behavioral" / "results" / "v2_1_*.jsonl")
+V2_1_DIR = Path(os.environ.get("V2_1_RESULTS_DIR", str(HERE / "results" / "v2_1_benign")))
+V2_1_GLOB = str(V2_1_DIR / "v2_1_*.jsonl")
 
 FEATS = ["recall_count","list_count","save_count","draft_count","send_count","rag_count",
     "seq_len","send_without_recall","recall_before_send","recall_to_send_ratio","max_recall_chain",

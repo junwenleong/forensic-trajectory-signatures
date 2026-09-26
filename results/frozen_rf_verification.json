@@ -31,7 +31,7 @@
     "sklearn": "1.9.0",
     "numpy": "2.4.6",
     "python": "3.14.6",
-    "classifier_script_sha256": "624044da951e782b41d074c0b50cddac420bd8b1fdebf40c0134a912ee63038f",
+    "classifier_script_sha256": "bef70019033d13f90efa56308f0d076ffda506c650347b71b0e7e6d2d6268ffc",
     "serialized_to": "results/frozen_rf.joblib",
     "extractor_missing_training_features": [],
     "extractor_extra_features": []

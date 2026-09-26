@@ -1,0 +1,93 @@
+{
+  "defense_stratified": {
+    "memory_sandbox": {
+      "n_atk": 40,
+      "n_clean": 320,
+      "fn": 31,
+      "recall": 0.225,
+      "fpr": 0.06875,
+      "auc": 0.9149609375
+    },
+    "minimizer": {
+      "n_atk": 320,
+      "n_clean": 40,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "auc": 1.0
+    },
+    "no_defense": {
+      "n_atk": 319,
+      "n_clean": 41,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "auc": 1.0
+    },
+    "prompt_hardening": {
+      "n_atk": 280,
+      "n_clean": 80,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.5,
+      "auc": 0.9239062499999999
+    },
+    "rag_llm_judge": {
+      "n_atk": 320,
+      "n_clean": 40,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "auc": 1.0
+    },
+    "rag_sanitizer": {
+      "n_atk": 320,
+      "n_clean": 40,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "auc": 1.0
+    },
+    "sanitizer": {
+      "n_atk": 320,
+      "n_clean": 40,
+      "fn": 0,
+      "recall": 1.0,
+      "fpr": 0.0,
+      "auc": 1.0
+    }
+  },
+  "feature_group_ablation": {
+    "Mechanistic (recall_before_send + send_without_recall)": {
+      "auc": 0.9903261803542646,
+      "delta": -3.468251195026806e-05,
+      "pct": -0.003502007525811652
+    },
+    "Frequency counts (recall/list/save/send/draft/rag/seq_len)": {
+      "auc": 0.9903417874846422,
+      "delta": -1.907538157264188e-05,
+      "pct": -0.001926104139195848
+    },
+    "Ratio features (recall_to_send_ratio, max_recall_chain)": {
+      "auc": 0.9903608628662148,
+      "delta": 0.0,
+      "pct": 0.0
+    },
+    "Bigram transitions (5 features)": {
+      "auc": 0.9903608628662148,
+      "delta": 0.0,
+      "pct": 0.0
+    },
+    "First-tool indicators (3 features)": {
+      "auc": 0.9903608628662148,
+      "delta": 0.0,
+      "pct": 0.0
+    },
+    "All recall-related (9 features)": {
+      "auc": 0.9903608628662148,
+      "delta": 0.0,
+      "pct": 0.0
+    }
+  },
+  "baseline_auc": 0.9903608628662148
+}

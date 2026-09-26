@@ -183,7 +183,16 @@ def score_x2():
                 t["_rbs"] = bool(t.get("recall_before_send")); t["_all"] = True
             ci = bs.clustered_ci(recs, "_rbs", "_all")
             out["x2_benign"] = {"n": len(recs), "point": ci["point"], "ci": ci["ci"],
-                                "cluster_gate": ci["effective_cluster_gate"]}
+                                "cluster_gate": False,
+                                "note": ("ci/cluster_gate above use the nominal scenario_id "
+                                         "unit and are NOT the reported figure: this runner "
+                                         "reuses probe_v3_3.run_benign_arm, whose trigger and "
+                                         "decoy-subset store collapse all 36 scenario_ids to 2 "
+                                         "effective clusters (decoy_subset), same as V3-3's "
+                                         "benign keystone. The corrected cluster-unit interval "
+                                         "is in results/necessity_cluster_bounds.json "
+                                         "(benign_keystones -> X2 benign keystone): "
+                                         "[0.3424, 1.0], not the degenerate interval above.")}
         else:
             for t in recs:
                 t["_succ"] = bool(t.get("attack_success"))

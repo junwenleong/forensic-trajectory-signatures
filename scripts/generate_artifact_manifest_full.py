@@ -95,7 +95,10 @@ CATEGORIES = {
                          # recomputation of every zero-event necessity cell
                          "results/provenance_coverage.json",
                          "results/necessity_cluster_bounds.json",
-                         "results/RESULTS_DIGEST.md"],
+                         "results/RESULTS_DIGEST.md",
+                         # feature-group ablation values cited in the classifier appendix
+                         # (vendored 2026-09-26 from the repo-root results/ tree)
+                         "results/paper_a_extended_analysis.json"],
     "correction_record": ["CHANGELOG.md"],
     "conformance": ["conformance.py", "check_conformance.py"],
 }
@@ -122,6 +125,10 @@ RESULT_DIRS = [
     "results/v3_2_k2", "results/v3_2_k8",
     # V3-6 / V3-6b (added 2026-09-25, folded in from the removed bare-filename loop)
     "results/v3_6", "results/v3_6b",
+    # V2-1 benign corpus: the 105 v2_1_*.jsonl files the paper's deployment-FPR/PPV
+    # analyses read (added 2026-09-26). Previously an external dependency pinned by a
+    # tree digest over an unreleased 2,735-file directory; now vendored and hashed per file.
+    "results/v2_1_benign",
 ]
 
 def sha(p: Path) -> str:
@@ -239,15 +246,6 @@ EXTERNAL = {
         "_resolve": os.environ.get(
             "P1_JSONL_PATH",
             str(Path.home() / "projects/agentic/results/defense_factorial/results.jsonl")),
-    },
-    "v2_1_benign_corpus": {
-        "role": "benign deployment-FPR and PPV analyses",
-        "released_in": "companion program, paper_1_behavioral/results/",
-        "local_path_env": "V2_1_RESULTS_DIR",
-        "path_hint": "$V2_1_RESULTS_DIR, default <repo>/paper_1_behavioral/results",
-        "_resolve": os.environ.get(
-            "V2_1_RESULTS_DIR",
-            str(ROOT.parent / "paper_1_behavioral" / "results")),
     },
 }
 for name, spec in EXTERNAL.items():

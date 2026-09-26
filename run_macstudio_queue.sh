@@ -16,6 +16,8 @@ echo "[$(date +%H:%M:%S)] API pipeline done. Opening SSH tunnel to Studio Ollama
 
 # tunnel local :11436 -> Studio 127.0.0.1:11434
 pkill -f "ssh.*11436:127.0.0.1:11434" 2>/dev/null; sleep 1
+# Remote Ollama host, e.g. user@host. Supplied by the operator; never hardcoded.
+: "${OLLAMA_SSH_TARGET:?set OLLAMA_SSH_TARGET=user@host for the remote Ollama machine}"
 ssh -f -N -L 11436:127.0.0.1:11434 "$OLLAMA_SSH_TARGET"
 sleep 3
 # Ollama's OpenAI-compatible endpoint is /v1

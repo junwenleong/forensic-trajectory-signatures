@@ -3,6 +3,15 @@
 Panel consensus (4/4 models): the full audit ledger should live in a durable repository
 artifact, with only a compact current-status box remaining in the paper. Nothing is
 deleted; this moves it and converts LaTeX to markdown.
+
+STATUS (2026-09-26): this was a one-time migration script. paper.tex's deviations
+longtable and version-history section have since been trimmed down to a compact
+current-status summary (Table tab:withdrawn) that points readers at CHANGELOG.md
+instead of containing the extractable source text this script looks for, so it no
+longer runs (it raises ValueError on the missing anchors) and is not a live
+regeneration tool. CHANGELOG.md is the authoritative, hand-maintained, append-only
+ledger; new entries are added directly to it. Kept for provenance of the original
+extraction, not deleted, per this project's append-only convention.
 """
 import pathlib
 import re

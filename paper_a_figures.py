@@ -1,5 +1,5 @@
 """
-Paper A — Figures and Extended Analysis
+Paper A: Figures and Extended Analysis
 =========================================
 Generates all figures and additional tables for the paper:
   1. ROC curves (per-fold CV + cross-model holdout)
@@ -47,7 +47,7 @@ plt.rcParams.update({
     "axes.spines.top":   False,
     "axes.spines.right": False,
 })
-ACCENT = "#2c5f8a"     # dark blue — main lines
+ACCENT = "#2c5f8a"     # dark blue, main lines
 GREY   = "#999999"
 RED    = "#c0392b"
 
@@ -174,7 +174,7 @@ def main():
     ax.plot([0, 1], [0, 1], "k--", lw=0.8, alpha=0.5)
     ax.set_xlabel("False Positive Rate")
     ax.set_ylabel("True Positive Rate")
-    ax.set_title("ROC Curve — Trajectory-Based Poisoning Detector\n(5-fold CV, $N{=}2{,}520$ DTA runs)")
+    ax.set_title("ROC Curve: Trajectory-Based Poisoning Detector\n(5-fold CV, $N{=}2{,}520$ DTA runs)")
     fold_patch = mpatches.Patch(color=ACCENT, alpha=0.35, label=f"Individual folds (mean AUC = {np.mean(fold_aucs):.4f})")
     ax.legend(handles=[ax.lines[5], fold_patch], loc="lower right")
     ax.set_xlim(-0.01, 1.01); ax.set_ylim(-0.01, 1.01)
@@ -215,7 +215,7 @@ def main():
     ax.set_yticklabels([f"\\texttt{{{lb}}}" if False else lb for lb in y_labels[::-1]],
                        fontfamily="monospace")
     ax.set_xlabel("Feature Importance (Mean Decrease in Impurity)")
-    ax.set_title("Top-10 Feature Importances — Random Forest\n"
+    ax.set_title("Top-10 Feature Importances: Random Forest\n"
                  r"(\textit{recall\_before\_send} is mechanistically forced by the attack)")
 
     # Annotate top bar
@@ -364,7 +364,7 @@ def main():
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels(labels, fontsize=9)
     ax.set_ylabel("ΔAUC (vs. full model)")
-    ax.set_title("Feature-Group Ablation — AUC Impact of Removing Each Group\n"
+    ax.set_title("Feature-Group Ablation: AUC Impact of Removing Each Group\n"
                  "(negative = removing this group hurts performance)")
     for bar, d in zip(bars, deltas):
         ax.text(bar.get_x() + bar.get_width()/2,
