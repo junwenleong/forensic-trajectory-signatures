@@ -191,8 +191,8 @@ def check(scorer_name: str, subdir: str, slug: str) -> int:
         print("\nCollection must not start. Fix the code or amend the deposit.")
         return 1
     print("\nCONFORMANCE GREEN. Every declared promise is bound to an executed assertion.")
-    print("NOTE: mechanics only. This cannot detect a deposit that is itself wrong; see the")
-    print("      red-team ritual in .ai/rules/conformance.md.")
+    print("NOTE: mechanics only. This cannot detect a deposit that is itself wrong; the")
+    print("      red-team ritual is required for that.")
     return 0
 
 
